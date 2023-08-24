@@ -18,11 +18,11 @@ const Dashboard = () => {
 
     return (
         <>
-            <Card>
+            {/* <Card>
                 <CardBody>
                     <h4>Dashboard</h4>
                 </CardBody>
-            </Card>
+            </Card> */}
             <Row className='match-height'>
                 <Col xl='4' md='6' xs='12'>
                     <CardMedal />
