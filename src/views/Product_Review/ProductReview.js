@@ -3,8 +3,10 @@ import DataTableWithButtons from '../tables/data-tables/basic/TableMultilingual'
 import StatsCard from '../ui-element/Static'
 import { FaStar } from 'react-icons/fa'
 import "./ProductReview.css"
+import DailyBarGraph from './DailyBarGraph'
 
 const ProductReview = () => {
+
 
     return (
         <>
@@ -61,18 +63,25 @@ const ProductReview = () => {
                 </Col>
                 <Col xl='6'>
                     <Card>
-                        <CardBody>
-                            <Row>
+                        <CardBody >
+                            <Row className=''>
                                 <Col sm="5">
-                                    <div>
-                                        <h4 className='text-nowrap'>Reviews statistics</h4>
+                                    <div className="mb-5">
+                                        <h4 className='text-nowrap mb-1'>Reviews statistics</h4>
                                         <p>
                                             <span>12 new reviews</span>
-                                            <span>12 new reviews</span>
+                                            <span className='badge week-btn badge-success mx-1'>+8.4%</span>
                                         </p>
                                     </div>
+                                    <div>
+                                        <h4 className="mb-1"><span className="text-success me-1">87%</span>
+                                            Positive reviews</h4>
+                                        <span>Weekly Report</span>
+                                    </div>
                                 </Col>
-                                <Col>vdsvdsv</Col>
+                                <Col>
+                                    <DailyBarGraph />
+                                </Col>
                             </Row>
                         </CardBody>
                     </Card>
