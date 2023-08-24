@@ -1,0 +1,26 @@
+.hover-card-active, .hidden-section {
+    transition: 0.25s ease;
+  }
+  
+  .hidden-section {
+    opacity: 0;
+    max-height: 0px;
+    position: relative;
+  }
+  
+  .hover-button {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s ease;
+  }
+  
+  .hover-card-active:hover .hidden-section {
+    opacity: 1;
+    max-height: 100px;
+  }
+  
+  .hover-card-active:hover .hover-button {
+    opacity: 1;
+    visibility: visible;
+  }
+  

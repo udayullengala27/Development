@@ -3,6 +3,7 @@ import Demo from '../../views/dashboard/Demo'
 const Dashboard = lazy(() => import('../../views/dashboard/Dashboard'))
 import Report from '../../views/Report/Report'
 import Notification from '../../views/Notification/Notification'
+import App from '../../views/dashboard/App'
 
 
 const Dashboard_Routes = [
@@ -13,6 +14,10 @@ const Dashboard_Routes = [
   {
     path: '/merchant/demo',
     element: <Demo />
+  },
+  {
+    path: '/merchant/apps',
+    element: <App />
   },
   {
     path: '/merchant/dashboard/report',
