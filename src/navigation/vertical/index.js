@@ -1,4 +1,4 @@
-import {  BookOpen, Home, User } from 'react-feather'
+import {  BookOpen, Home, User, BarChart2, TrendingUp  } from 'react-feather'
 
 export default [
   {
@@ -15,5 +15,17 @@ export default [
     title: 'Leads',
     icon: <User size={20} />,
     navLink: '/merchant/leads'
+  },
+  {
+    id: 'statistics',
+    title: 'Statistics',
+    icon: <BarChart2 size={20} />,
+    navLink: '/merchant/statistics'
+  },
+  {
+    id: 'analytics',
+    title: 'Analytics',
+    icon: <TrendingUp size={20} />,
+    navLink: '/merchant/analytics'
   }
 ]

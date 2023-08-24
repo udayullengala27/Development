@@ -1,0 +1,53 @@
+.topCountryOuterDiv {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-image: conic-gradient(rgba(90, 200, 140, 255) 10deg, rgba(220, 246, 232, 255) 5deg, rgba(220, 246, 232, 255) 345deg);
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
+.topCountryInnerDiv {
+    width: 150px;
+    aspect-ratio: 1/1;
+    background-color: white;
+}
+
+.no-border {
+    width: 100px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 5px 10px;
+    /* Add padding to the select */
+}
+
+/* Hide the default arrow icon */
+.no-border::-ms-expand {
+    display: none;
+}
+
+/* Add a custom arrow icon */
+.no-border:after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Customize the dropdown menu */
+.no-border option {
+    margin: 10px;
+    /* Space between options */
+}
+
+
+@media screen and (max-width: 350px) {
+    .topCountryOuterDiv {
+        width: 150px;
+    }
+
+    .topCountryInnerDiv {
+        width: 100px;
+    }
+}
