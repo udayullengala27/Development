@@ -1,54 +1,77 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
 
-function listMonthsStartingFromCurrentMonth() {
+const BarChart = (props) => {
+  const { startMonth, endMonth } = props
+
   const months = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ]
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+]
 
-  const currentMonth = new Date().getMonth()
-  const orderedMonths = [...months.slice(currentMonth), ...months.slice(0, currentMonth)]
+  const handleGenerate = () => {
+    const startMonthIndex = parseInt(startMonth)
+    const endMonthIndex = parseInt(endMonth)
+    const data = [65, 29, 60, 91, 56, 45, 60, 30, 56, 40, 73, 15]
 
-  return orderedMonths
-}
 
-const monthlySalesData = {
-  labels:listMonthsStartingFromCurrentMonth(),
-  datasets: [
-    {
-      label: 'Monthly Sales',
-      backgroundColor: 'rgba(116, 105, 239, 0.5)',
-      borderColor: 'rgba(116, 105, 239, 0.5)',
-      borderWidth: 1,
-      hoverBackgroundColor: 'rgba(116, 105, 239, 255)',
-      hoverBorderColor: 'rgba(116, 105, 239, 255)',
-      data: [65, 29, 60, 91, 56, 45, 60, 30, 56, 40, 73, 15]
-    }
-  ]
-}
+    if (!isNaN(startMonthIndex) && !isNaN(endMonthIndex)) {
+        const selectedMonths = []
 
-const chartOptions = {
-  maintainAspectRatio: false,
-  scales: {
-    x: {
-      grid: {
-        display: false 
-      }
-    },
-    y: {
-      grid: {
-        display: false 
-      }
+        if (endMonthIndex >= startMonthIndex) {
+            selectedMonths.push(...months.slice(startMonthIndex, endMonthIndex + 1))
+        } else {
+            selectedMonths.push(...months.slice(startMonthIndex))
+            selectedMonths.push(...months.slice(0, endMonthIndex + 1))
+        }
+        return {selectedMonths, data:  data.splice(0, selectedMonths.length)}
+    } else {
+        return { 
+          selectedMonths: [
+          'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December'
+          ], 
+          data
+        }
     }
   }
-}
 
-// monthlySalesData.datasets[0].barPercentage = 0.7 
-// monthlySalesData.datasets[0].categoryPercentage = 0.7 
-
-const BarChart = () => {
+  const monthlySalesData = {
+    labels: handleGenerate().selectedMonths,
+    datasets: [
+      {
+        label: 'Reviews Growth',
+        backgroundColor: 'rgba(116, 105, 239, 0.5)',
+        borderColor: 'rgba(116, 105, 239, 0.5)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(116, 105, 239, 255)',
+        hoverBorderColor: 'rgba(116, 105, 239, 255)',
+        data: handleGenerate().data
+      }
+    ]
+  }
   
+  const chartOptions = {
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        grid: {
+          display: false 
+        }
+      },
+      y: {
+        grid: {
+          display: false 
+        }
+      }
+    },
+    plugins: {
+      legend: {
+        display: false
+      }
+    }
+  }  
+
   return (
     <div className=' mb-2 ' style={{ height: '500px' }}>
       <Bar

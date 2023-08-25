@@ -1,22 +1,25 @@
-`    import { useState } from 'react'
+  import { useState } from 'react'
     import { Col, Row, Card, CardBody, InputGroup, ButtonDropdown, Button, DropdownToggle, DropdownMenu, DropdownItem, Input } from 'reactstrap'
     import {AiFillStar} from "react-icons/ai"
     import BarChart from './BarChart'
     import "./Analytics.css"
 
     const Analytics = () => {
-        const [dropdownOpen, setDropdownOpen] = useState(false)
-        const [selectedOption, setSelectedOption] = useState('option1')
-        const options = ['5 star', '4 star', '3 star', '2 star', '1 star']
+        const [rateOption, setRateOption] = useState('All ')
+        const rateOptions = ['5 ', '4 ', '3 ', '2 ', '1 ']
+        
+        const [continentOption, setContinentOption] = useState('AllContinents')    
+        const continentOptions = ["Africa", "Antarctica", "Asia", "Australia", "Europe", "NorthAmerica", "SouthAmerica"]
+        
+        const [startMonth, setStartMonth] = useState('0')
+        const [endMonth, setEndMonth] = useState('11')
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        
+        const [durationOption, setDurationOption] = useState('1mo 0days')
+        const durationOptions = ["1mo 0 days", "1mo 3 days", "1mo 15 days", "2mo 0 days", "2mo 10 days"]
 
-        const toggleDropdown = () => {
-            setDropdownOpen(!dropdownOpen)
-        }
-
-        const handleOptionChange = (event) => {
-            setSelectedOption(event.target.value)
-        }
-
+        console.log(rateOption, rateOptions) 
+     
     return (
         <>
             <Card>
@@ -30,54 +33,50 @@
                         <CardBody>
                             <div className=' d-flex justify-content-between align-items-center '>
                                 <p className=' fw-bold '>Average</p>
-                                <select
-                                    id="optionSelect"
-                                    value={selectedOption}
-                                    onChange={handleOptionChange}
-                                    className='no-border'
-                                >
-                                    {options.map((option) => (
-                                        <option key={option} value={option} className=' m-3 ' >
-                                            {option}
-                                        </option>
-                                    ))}
-                                </select>
-                        
+                                <div>
+                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" 
+                                    type="button" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">
+                                        { rateOption + "star" }
+                                    </button>
+                                    <ul className="dropdown-menu">
+                                    <li className=" dropdown-item cursor-pointer" onClick={ () => setRateOption("All ")}> All star</li>
+                                        {
+                                            rateOptions.map(ele => {
+                                                return (
+                                                    <li key = { ele } className=" dropdown-item cursor-pointer" onClick={ () => setRateOption(ele)}>
+                                                        { ele + "star" }
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </div>
                             </div>
                             <p className=' mb-2'><span className=' fw-bolder '>Q</span> Base on <span className=' fs-5 fw-bolder'>0</span> publish review</p>
                             <div>
                                 <ul className=' list-unstyled'>
-                                    <li className=' d-flex justify-content-evenly align-items-center mb-1'>
-                                        <AiFillStar style={{color: "yellow", fontSize:"20px"}}/> 
-                                        <span className=' fw-bold fs-5'>5</span> 
-                                        <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span> 
-                                        0%
-                                    </li>
-                                    <li className=' d-flex justify-content-evenly align-items-center mb-1'>
-                                        <AiFillStar style={{color: "yellow", fontSize:"20px"}}/> 
-                                        <span className=' fw-bold fs-5'>4</span> 
-                                        <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span> 
-                                        0%
-                                    </li>
-                                    <li className=' d-flex justify-content-evenly align-items-center mb-1'>
-                                        <AiFillStar style={{color: "yellow", fontSize:"20px"}}/> 
-                                        <span className=' fw-bold fs-5'>3</span> 
-                                        <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span> 
-                                        0%
-                                    </li>
-                                    <li className=' d-flex justify-content-evenly align-items-center mb-1'>
-                                        <AiFillStar style={{color: "yellow", fontSize:"20px"}}/> 
-                                        <span className=' fw-bold fs-5'>2</span> 
-                                        <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span> 
-                                        0%
-                                    </li>
-                                    <li className=' d-flex justify-content-evenly align-items-center mb-1'>
-                                        <AiFillStar style={{color: "yellow", fontSize:"20px"}}/> 
-                                        <span className=' fw-bold fs-5'>1</span> 
-                                        <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span> 
-                                        0%
-                                    </li>
-                                    
+                                    {
+                                        rateOptions.map((ele, index) => {
+                                            return (
+                                                <li className= {rateOption === ele ? 
+                                                                    ' d-flex justify-content-evenly align-items-center mb-1 opacity-100' 
+                                                                   :
+                                                                   rateOption === "All " ?
+                                                                   ' d-flex justify-content-evenly align-items-center mb-1 opacity-100'
+                                                                   :
+                                                                    ' d-flex justify-content-evenly align-items-center mb-1 opacity-25' 
+                                                                }
+                                                >
+                                                    <AiFillStar style={{color: "yellow", fontSize:"20px"}}/> 
+                                                    <span className=' fw-bold fs-5'>{ rateOptions.length - index }</span> 
+                                                    <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span> 
+                                                    0%
+                                                </li>
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </CardBody>
@@ -88,15 +87,28 @@
                     <Card>
                         <CardBody>
                             <div className=' d-flex justify-content-between align-items-center '>
-                                <p className=' fw-bold '>Top Countries</p>
-                                <p>All time</p>
+                                <p className=' fw-bold '>Top Countries in { continentOption }</p>
+                                {/* <p>All time</p> */}
+                                <div>
+                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ continentOption }</button>
+                                    <ul className="dropdown-menu">
+                                    <li className=" dropdown-item cursor-pointer" onClick={ () => setContinentOption("AllContinents")}>All Continents</li>
+                                        {
+                                            continentOptions.map(ele => {
+                                                return (
+                                                    <li key= { ele} className=" dropdown-item cursor-pointer" onClick={ () => setContinentOption(ele)}>{ ele }</li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </div>
                             </div>
-                            <div className=' d-flex justify-content-evenly align-items-center '>
-                                <div className='topCountryOuterDiv rounded-circle'>
+                            <div className=' d-flex justify-content-evenly align-items-center mb-1 '>
+                                <div className={ `topCountryOuterDiv rounded-circle ${continentOption.toLowerCase()}` }>
                                     <div className='topCountryInnerDiv  rounded-circle'></div>
                                 </div>
                                 <div className=' d-flex justify-content-between align-items-center '>
-                                    <div className=' mx-1' style={{ width: "15px", height: "15px", backgroundColor: "rgba(90, 200, 140, 255)"}}></div>
+                                    <div className={ ` mx-1 ${continentOption.toLowerCase() + "btn"}` } style={{ width: "15px", height: "15px"}}></div>
                                     <h6>
                                         EMPTY
                                     </h6>
@@ -110,56 +122,179 @@
                 <CardBody>
                     <div className=' d-flex justify-content-between align-items-center pb-2  border-bottom'>
                         <h4>Analytics</h4>
-                        <>
-                            <ButtonDropdown
-                                isOpen={dropdownOpen}
-                                toggle = { toggleDropdown }
-                            >
-                                <Button outline>
-                                    All time
-                                </Button>
-                                <DropdownToggle
-                                    outline
-                                    split
-                                    onClick={toggleDropdown} 
-                                />
-                                <DropdownMenu direction="down">
-                                    <DropdownItem header>
-                                        Header
-                                    </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem disabled>
-                                        Option 1
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    
-                                    <DropdownItem>
-                                        Option 3
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </ButtonDropdown>
-                        </>
+                        <div className="months">
+                            <div>
+                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ months[parseInt(startMonth)] }</button>
+                                    <ul className="dropdown-menu">
+                                        {
+                                            months.map((ele, index) => {
+                                                return (
+                                                    <li key={ index } className=" dropdown-item cursor-pointer" onClick={ () => setStartMonth(index)}>{ ele }</li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                            </div>
+                            <div>
+                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ months[parseInt(endMonth)] }</button>
+                                    <ul className="dropdown-menu">
+                                        {
+                                            months.map((ele, index) => {
+                                                return (
+                                                    <li key={ index } className=" dropdown-item cursor-pointer" onClick={ () => setEndMonth(index)}>{ ele }</li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <h5 className=' fw-bolder  text-capitalize my-2 '>All reviews Growth</h5>
 
                     <div>
                         
-                        <BarChart />
+                        <BarChart  startMonth = {startMonth} endMonth= {endMonth} />
                     </div>
-
-                    <h6 className=' mb-1'><span className=' fw-bolder'>Request Email Analysis -</span> Sent, Open Clicked</h6>
-                    <h6 className=' mb-1'><span className=' fw-bolder'>Best Rated Products</span></h6>
-                    <h6 className=' mb-1'><span className=' fw-bolder'>1mo 3days</span></h6>
-                    <h6 className=' mb-1'><span className=' fw-bolder'>Avg. Duration from Product Purchase to Review Posted</span></h6>
+                                        
                 </CardBody>
             </Card>
+
+            {/* <Row>
+                <Col xl="3">
+                    <Card style={{ minHeight: "250px"}}>
+                        <CardBody>
+                            <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Best Rated Products</span></p>
+                        </CardBody>
+                    </Card>
+                </Col>
+                <Col xl="4">
+                    <Card style={{ minHeight: "250px"}}>
+                        <CardBody>
+                            <div className='d-flex flex-wrap  justify-content-between align-items-center '>
+                                <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Avg. Duration from Product Purchase to Review Posted</span></p>
+                                <div>
+                                        <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ durationOption }</button>
+                                        <ul className="dropdown-menu">
+                                            {
+                                                durationOptions.map((ele, index) => {
+                                                    return (
+                                                        <li key={ index } className=" dropdown-item cursor-pointer" onClick={ () => setDurationOption(ele)}>{ ele }</li>
+                                                    )
+                                                })
+                                            }
+                                        </ul>
+                                </div>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </Col>
+                <Col xl="5">
+                    <Card style={{ minHeight: "250px"}}>
+                        <CardBody>
+                            <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Request Email Analysis -</span> Sent, Open Clicked</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th className=' text-center ' scope="col">Sent</th>
+                                        <th className=' text-center ' scope="col">Open</th>
+                                        <th className=' text-center ' scope="col">Clicked</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </CardBody>
+                    </Card>
+                </Col>
+            </Row> */}
+
+            <Row>
+                <Col xl="3" md="6">
+                    <Card style={{ minHeight: "250px"}}>
+                        <CardBody>
+                            <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Best Rated Products</span></p>
+                        </CardBody>
+                    </Card>
+                </Col>
+                <Col xl="3"  md="6">
+                    <Card style={{ minHeight: "250px"}}>
+                        <CardBody>
+                            <div className='d-flex flex-wrap  justify-content-between align-items-center '>
+                                <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Avg. Duration from Product Purchase to Review Posted</span></p>
+                                <div>
+                                        <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ durationOption }</button>
+                                        <ul className="dropdown-menu">
+                                            {
+                                                durationOptions.map((ele, index) => {
+                                                    return (
+                                                        <li key={ index } className=" dropdown-item cursor-pointer" onClick={ () => setDurationOption(ele)}>{ ele }</li>
+                                                    )
+                                                })
+                                            }
+                                        </ul>
+                                </div>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </Col>
+                <Col xl="6">
+                    <Card style={{ minHeight: "250px"}}>
+                        <CardBody>
+                            <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Request Email Analysis -</span> Sent, Open Clicked</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th className=' text-center ' scope="col">Sent</th>
+                                        <th className=' text-center ' scope="col">Open</th>
+                                        <th className=' text-center ' scope="col">Clicked</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                        <td className=' text-center '>X</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </CardBody>
+                    </Card>
+                </Col>
+            </Row>
+
+            <Row style={{ minHeight: "200px"}}>
+                
+            </Row>
             
             
         </>
     )
     }
 
-    export default Analytics`
+    export default Analytics
