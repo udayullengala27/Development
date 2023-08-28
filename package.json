@@ -74,6 +74,7 @@
 		"react-shepherd": "3.3.6",
 		"react-slidedown": "2.4.5",
 		"react-sortablejs": "6.0.0",
+		"react-table": "^7.8.0",
 		"reactstrap": "9.0.1",
 		"recharts": "^0.22.5",
 		"redux": "4.0.5",

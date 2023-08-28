@@ -37,6 +37,7 @@
 
   .rdt_TableBody {
     .rdt_TableRow {
+      margin-top: 1rem;
       color: $body-color;
       .rdt_TableCell {
         height: 53px;
@@ -77,6 +78,7 @@
       transform: translateX(0);
     }
     .rdt_TableBody .rdt_TableRow .rdt_TableCell:first-child .form-check {
+      margin-top: 1rem;
       transform: translateX(10px);
     }
   }
@@ -164,6 +166,7 @@
         color: $theme-dark-body-color;
       }
       .rdt_TableRow {
+        margin-top: 1rem;
         background-color: $theme-dark-table-bg;
         color: $theme-dark-body-color;
         border-color: $theme-dark-border-color;

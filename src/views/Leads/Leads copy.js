@@ -1,4 +1,3 @@
-
 import { Col, Row, Card, CardBody, Table } from 'reactstrap'
 import StatsCard from '../ui-element/Static'
 import axios from 'axios'

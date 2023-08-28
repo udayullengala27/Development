@@ -7,6 +7,15 @@
     /* width: 39%; */
     /* padding: 1rem; */
 }
+.week-btn1 {
+    background-color: #dff7e9;
+    color: #198754;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px;
+    /* width: 39%; */
+    /* padding: 1rem; */
+}
 
 .card1 {
     border-right: 1px solid #dbdade;
@@ -24,4 +33,13 @@
         border-right: none;
         border-bottom: 1px solid #dbdade;
     }
+    /* .dropsdown{
+        margin-left:none;
+        margin-top: 2rem;
+        align-items: start;
+    } */
+}
+
+.dropsdown .dropsdown-width{
+width:9rem;
 }

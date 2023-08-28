@@ -1,9 +1,12 @@
 import { Col, Row, Card, CardBody, Progress } from 'reactstrap'
-import DataTableWithButtons from '../tables/data-tables/basic/TableMultilingual'
-import StatsCard from '../ui-element/Static'
 import { FaStar } from 'react-icons/fa'
 import "./ProductReview.css"
 import DailyBarGraph from './DailyBarGraph'
+// import Column from '../Product_Review/Column'
+import ProdReviewTable from './ProdReviewTable'
+import { Download, Printer, File, FileText, Copy } from 'react-feather'
+import TableZeroConfig from '../tables/data-tables/basic/TableZeroConfig'
+
 
 const ProductReview = () => {
 
@@ -63,14 +66,14 @@ const ProductReview = () => {
                 </Col>
                 <Col xl='6'>
                     <Card>
-                        <CardBody >
-                            <Row className=''>
+                        <CardBody>
+                            <Row className='d-flex justify-content-between'>
                                 <Col sm="5">
                                     <div className="mb-5">
                                         <h4 className='text-nowrap mb-1'>Reviews statistics</h4>
                                         <p>
                                             <span>12 new reviews</span>
-                                            <span className='badge week-btn badge-success mx-1'>+8.4%</span>
+                                            <span className='badge week-btn1 badge-success mx-1'>+8.4%</span>
                                         </p>
                                     </div>
                                     <div>
@@ -79,7 +82,7 @@ const ProductReview = () => {
                                         <span>Weekly Report</span>
                                     </div>
                                 </Col>
-                                <Col>
+                                <Col sm="6" className='mt-1'>
                                     <DailyBarGraph />
                                 </Col>
                             </Row>
@@ -89,11 +92,47 @@ const ProductReview = () => {
             </Row>
             <Row>
                 <Col>
-                    <Card>
-                        <CardBody>
-                            <DataTableWithButtons />
+                    <Card style={{ height: "800px" }}>
+                        <CardBody className='mt-2' style={{ padding: "0px" }}>
+                            <Row className=' d-flex justify-content-between align-items-center gap-2'>
+                                <Col md="4" sm="8">
+                                    <input className="form-control mr-sm-2 w-auto mx-3" type="search" placeholder="Search Review" aria-label="Search" />
+                                </Col>
+                                <Col className='d-flex gap-1 dropsdown' md="4" sm="8">
+                                    <select className="form-select dropsdown-width" aria-label="Default select example">
+                                        <option selected value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                    <select className="form-select dropsdown-width" aria-label="Default select example">
+                                        <option selected value="all">All</option>
+                                        <option value="publish">Published</option>
+                                        <option value="pemding">Pending</option>
+                                    </select>
+                                    <div className="dropdown dropsdown-width">
+                                        <button className="btn btn-light text-secondary text-center dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Download size={17} style={{ marginRight: "2px" }} />   Export
+                                        </button>
+                                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li style={{ padding: '0 5px 0 4px' }} ><a className="dropdown-item" href="#"><Printer size={17} style={{ marginRight: "2px" }} /> Print</a></li>
+                                            <li style={{ padding: '0 5px 0 4px' }} ><a className="dropdown-item" href="#"><File size={17} style={{ marginRight: "2px" }} /> Csv</a></li>
+                                            <li style={{ padding: '0 5px 0 4px' }} ><a className="dropdown-item" href="#"><FileText size={17} style={{ marginRight: "2px" }} /> Pdf</a></li>
+                                            <li style={{ padding: '0 5px 0 4px' }} ><a className="dropdown-item" href="#"><Copy size={17} style={{ marginRight: "2px" }} /> Copy</a></li>
+                                        </ul>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <hr className='mt-2 mb-0' />
+                            {/* <TablePR /> */}
+                            {/* <DataTableWithButtons/> */}
+                            {/* <PRTable/> */}
+                            {/* <TableZeroConfig/> */}
+                            {/* <Column/> */}
+                            <ProdReviewTable/>
                         </CardBody>
                     </Card>
+
                 </Col>
 
             </Row>
