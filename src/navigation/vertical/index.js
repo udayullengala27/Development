@@ -15,5 +15,35 @@ export default [
     title: 'Leads',
     icon: <User size={20} />,
     navLink: '/merchant/leads'
+  },
+  {
+    id: 'moviesdash',
+    title: 'MovieDash',
+    icon: <User size={20} />,
+    navLink: '/merchant/moviesdash'
+  },
+  {
+    id: 'propertylist',
+    title: 'Propertylist',
+    icon: <User size={20} />,
+    navLink: '/merchant/propertylist'
+  },
+  {
+    id: 'campaign',
+    title: 'Campaign',
+    icon: <User size={20} />,
+    navLink: '/merchant/campaign'
+  },
+  {
+    id: 'email',
+    title: 'Email',
+    icon: <User size={20} />,
+    navLink: '/merchant/email'
+  },
+  {
+    id: 'createcampaign',
+    title: 'CreateCampaign',
+    icon: <User size={20} />,
+    navLink: '/merchant/createcampaign'
   }
 ]
