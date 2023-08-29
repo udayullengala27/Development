@@ -5,6 +5,8 @@ import Report from '../../views/Report/Report'
 import Notification from '../../views/Notification/Notification'
 import Statistics from '../../views/Statistics/Statistics'
 import Analytics from '../../views/analytics/Analytics'
+import EmailStats from '../../views/email-stats/EmailStats'
+import OverallStats from '../../views/overall-stats/OverallStats'
 
 
 const Dashboard_Routes = [
@@ -31,6 +33,14 @@ const Dashboard_Routes = [
   {
     path: '/merchant/analytics',
     element: <Analytics />
+  },
+  {
+    path: '/merchant/email-statistics',
+    element: <EmailStats />
+  },
+  {
+    path: '/merchant/overall-statistics',
+    element: <OverallStats />
   }
 ]
 

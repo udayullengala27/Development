@@ -1,4 +1,4 @@
-import {  BookOpen, Home, User, BarChart2, TrendingUp  } from 'react-feather'
+import {  BookOpen, Home, User, BarChart2, TrendingUp, Mail, Activity } from 'react-feather'
 
 export default [
   {
@@ -27,5 +27,17 @@ export default [
     title: 'Analytics',
     icon: <TrendingUp size={20} />,
     navLink: '/merchant/analytics'
+  },
+  {
+    id: 'emailStats',
+    title: 'Email Stats',
+    icon: <Mail size={20} />,
+    navLink: '/merchant/email-statistics'
+  },
+  {
+    id: 'overallStats',
+    title: 'Overall Stats',
+    icon: <Activity size={20} />,
+    navLink: '/merchant/overall-statistics'
   }
 ]
