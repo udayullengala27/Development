@@ -2,10 +2,8 @@ import { Col, Row, Card, CardBody, Progress } from 'reactstrap'
 import { FaStar } from 'react-icons/fa'
 import "./ProductReview.css"
 import DailyBarGraph from './DailyBarGraph'
-// import Column from '../Product_Review/Column'
 import ProdReviewTable from './ProdReviewTable'
 import { Download, Printer, File, FileText, Copy } from 'react-feather'
-import TableZeroConfig from '../tables/data-tables/basic/TableZeroConfig'
 
 
 const ProductReview = () => {
@@ -124,11 +122,6 @@ const ProductReview = () => {
                                 </Col>
                             </Row>
                             <hr className='mt-2 mb-0' />
-                            {/* <TablePR /> */}
-                            {/* <DataTableWithButtons/> */}
-                            {/* <PRTable/> */}
-                            {/* <TableZeroConfig/> */}
-                            {/* <Column/> */}
                             <ProdReviewTable/>
                         </CardBody>
                     </Card>

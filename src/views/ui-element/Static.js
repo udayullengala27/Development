@@ -40,23 +40,23 @@ const StatsCard = () => {
       </CardHeader>
       <CardBody className='statistics-body'>
         <Row>
-            {
-                data.map((currElem) => {
-                    return (
-                        <>
-                            <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-                                <div class="media d-flex">
-                                    <Avatar color={currElem.color} icon={currElem.icon} className='me-2' />
-                                    <div className='my-auto'>
-                                        <h4 className='fw-bolder mb-0'>{currElem.title}</h4>
-                                        <CardText className='font-small-3 mb-0'>{currElem.subtitle}</CardText>
-                                    </div>  
-                                </div>
-                            </div>
-                        </>
-                    )
-                })  
-            }
+          {
+            data.map((currElem) => {
+              return (
+                <>
+                  <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                    <div class="media d-flex">
+                      <Avatar color={currElem.color} icon={currElem.icon} className='me-2' />
+                      <div className='my-auto'>
+                        <h4 className='fw-bolder mb-0'>{currElem.title}</h4>
+                        <CardText className='font-small-3 mb-0'>{currElem.subtitle}</CardText>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )
+            })
+          }
         </Row>
       </CardBody>
     </Card>

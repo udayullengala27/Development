@@ -21,5 +21,11 @@ export default [
     title: 'Product Reviews',
     icon: <User size={20} />,
     navLink: '/merchant/product-review'
+  },
+  {
+    id: 'home',
+    title: 'Home',
+    icon: <User size={20} />,
+    navLink: '/merchant/home'
   }
 ]
