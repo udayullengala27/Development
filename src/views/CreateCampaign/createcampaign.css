@@ -1,39 +1,87 @@
-.item-contain{
+.contain-value .item-contain{
+    width: 180px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.23) 0px 1px 3px;
 }
 h2{
     font-weight: 500;
-    border-bottom: 1px solid #C6C6C6;
+   font-size: 1.285rem;
+   
+   padding: 10px;
 }
-h3{
+.seperate{
+    
+}
+.cardText{
+    font-size: 13px;
     font-weight: 500;
 }
-.item-contain:hover{
-    border:0.3px solid #C6C6C6;
+small{
+    margin-top:20px ;
+    font-size: 13px;
 }
-.img-log{
-    height: 55px;
-    width: 55px;
-    border-radius: 30px;
-    padding: 10px;
+.much{
+    font-size: 20px;
+    border: 1px solid #C6C6C6;
+    padding: 1px 8px;
 }
-.img-log img{
-    width: 100%;
-    height: 100%;
-}
-.button{
-    width: 94%;
-    border: 0;
-    border-radius:5px;
-    text-align: center;
-    font-weight: 600;
-}
-.button:hover{
-    opacity: 0.8;
 
+.contain-value .item-contain:hover{
+    border:0.3px solid #cf2b2b;
 }
-.img-bg img{
-    width: 100%;
+.contain-value .img-log{
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+}
+.table .img-log{
+    height: 80px;
+    width: 70px;
+    padding: 8px;
+}
+
+.contain-value .img-bg img{
+    width: 100%; 
     height: 100%;
 }
+.table .img-bg img{
+    width: 100%; 
+    height: 100%;
+}
+.filter-contain{
+    width: 100%;
+}
+.input-select{
+    width: 30%;
+    font-size: 11px;
+    margin-left: 10px;
+   
+}
+.input-select-text{
+    width: 100%;
+    font-size: 11px;
+}
+.filter{
+    position: relative;
+    top: 38%;
+    left: -10%;
+    height: 23px;
+    width: 30px;
+}
+.filter img{
+    height: 100%;
+    width: 100%;
+    
+}
+.searchbar{
+   width: 90%;
+}
+.tal-val{
+    padding: 5px;
+}
+.searchbarwidth{
+    border-radius: 15px;
+    margin-top:12px;
+    padding: 9px;
+}
+
