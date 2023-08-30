@@ -45,5 +45,11 @@ export default [
     title: 'CreateCampaign',
     icon: <User size={20} />,
     navLink: '/merchant/createcampaign'
+  },
+  {
+    id: 'newdashboard',
+    title: 'NewDashBoard',
+    icon: <User size={20} />,
+    navLink: '/merchant/newdashboard'
   }
 ]
