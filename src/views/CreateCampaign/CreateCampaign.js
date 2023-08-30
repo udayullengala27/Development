@@ -93,7 +93,7 @@ const [data, setData] = useState([]) // Your table data
   return (
     <Fragment>
       <Card classNam=''>
-        <div className='seperate'> <h2 className='mb-0 heading-1'>Reach User Via</h2></div>
+        <div className='seperate'> <h2 className='mb-0 heading-0'>Reach User Via</h2></div>
 
 
         <Row>
@@ -155,7 +155,7 @@ const [data, setData] = useState([]) // Your table data
 
       <Card>
         <Row>
-          <div className='invoice-list-table-header w-100 py-2'>
+          <div className='invoice-list-table-header w-100'>
             <Row>
               <Col lg='9' className='d-flex justify-content-center px-lg-2 px-0 text-center'>
                 <div className='ml-1 mt-1'> <h2 className='mb-0 heading-1'>Campaigns</h2></div>
@@ -164,12 +164,12 @@ const [data, setData] = useState([]) // Your table data
               </Col>
            
           
-              <Col lg='3'className='d-flex justify-content-end w-40'>
+              <Col lg='3'className='d-flex ml-1 justify-content-end w-40'>
               <div className='searchbarwidth'>
 
 <Input
   id='search-invoice'
-  className='searchbar ms-20 pe-1'
+  className='searchbar  ml-3 pe-1'
   type='text'
 
   onChange=''
@@ -260,11 +260,11 @@ const [data, setData] = useState([]) // Your table data
                       </CardText>
 
                     </div>
-                    <div> <span className='bg-white much rounded text-muted'>...</span></div>
+                    <div className='o-brdr'> <span className='bg-white  much rounded text-muted'>...</span></div>
                   </div></td>
-                  <td> <span className='bg-success tal-val rounded text-white'>{row.channel}</span> </td>
+                  <td> <span className='email t-style tal-val rounded text-white'>{row.channel}</span> </td>
                   <td>{row.segment}</td>
-                  <td><span className='bg-warning  tal-val rounded text-white'>{row.mode}</span> </td>
+                  <td><span className='bg-warning  t-style tal-val rounded text-white'>{row.mode}</span> </td>
                   <td>{row.label}</td>
                   <td>{row.lastupdate}</td>
                 </tr>
