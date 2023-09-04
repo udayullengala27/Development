@@ -7,6 +7,7 @@ import Statistics from '../../views/Statistics/Statistics'
 import Analytics from '../../views/analytics/Analytics'
 import EmailStats from '../../views/email-stats/EmailStats'
 import OverallStats from '../../views/overall-stats/OverallStats'
+import ConsentStats from '../../views/consent-stats/ConsentStats'
 
 
 const Dashboard_Routes = [
@@ -41,6 +42,10 @@ const Dashboard_Routes = [
   {
     path: '/merchant/overall-statistics',
     element: <OverallStats />
+  },
+  {
+    path: '/merchant/consent-statistics',
+    element: <ConsentStats />
   }
 ]
 

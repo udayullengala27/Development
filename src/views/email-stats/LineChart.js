@@ -2,6 +2,8 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 
 const LineChart = (props) => {
+  const { selectedOptions } = props
+
   const optionsList = []
   const datasets = []
   const dataList = [
@@ -16,7 +18,6 @@ const LineChart = (props) => {
     [800, 1500, 2800, 1700, 2900, 3100, 1100, 2700],
     [600, 1100, 3300, 1600, 2100, 3600, 1200, 2100]
   ]
-  const { selectedOptions } = props
 
   const chartOptions = [
     { 
@@ -77,7 +78,7 @@ const LineChart = (props) => {
     maintainAspectRatio: true,
     scales: {
       x: {
-        beginAtZero: false,
+        beginAtZero: true,
         grid: {
           display: false 
         },
@@ -87,7 +88,7 @@ const LineChart = (props) => {
         }
       },
       y: {
-        beginAtZero: false,
+        beginAtZero: true,
         grid: {
           display: false 
         },

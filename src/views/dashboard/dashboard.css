@@ -1,3 +1,33 @@
+@font-face {
+    font-family: brandon-grotesque;
+    /* src: url("../../../public/fonts/brandon-1/brandon-grotesque-black-58a8a3e824392.otf"); */
+    /* src: url("../../../public/fonts/brandon-2/Brandon_light.otf"); */
+    src: url("../../../public/fonts/brandon-2/Brandon_reg.otf");
+    /* src: url("../../../public/fonts/brandon-2/Brandon_med.otf"); */
+    font-weight: 400 !important;
+}
+
+@font-face {
+    font-family: open-serif;
+    src: url(../../../public/fonts/open-serif/OpenSerif-Book.ttf);
+    font-weight: 400 !important;
+}
+
+.customStyle {
+    color: #8a929e;
+    letter-spacing: 0.34px !important;
+    line-height: 16px !important;
+    font-weight: 400 !important;
+}
+
+.brandonFont {
+    font-family: "brandon-grotesque" !important;
+}
+
+.openSerifFont {
+    font-family: open-serif !important;
+}
+
 .logo {
     width: 50px;
     height: 50px;

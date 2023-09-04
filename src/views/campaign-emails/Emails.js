@@ -127,7 +127,7 @@ const Emails = () => {
 //                                 </button>
 //                             </div>
 //                             <div className="modal-body d-flex justify-content-center align-items-center">
-//                             <Card className=''>
+//                             <Card>
 //                                 <CardBody className=' d-flex flex-column align-items-center '>
 //                                     <Mail size={200}/>
 //                                     <h3 className=' fw-bolder '>Check your email</h3>

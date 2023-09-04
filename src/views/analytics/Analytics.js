@@ -3,23 +3,24 @@
     import {AiFillStar} from "react-icons/ai"
     import BarChart from './BarChart'
     import "./Analytics.css"
+import DoughnutChart from './DoughnutChart'
 
     const Analytics = () => {
         const [rateOption, setRateOption] = useState('All ')
         const rateOptions = ['5 ', '4 ', '3 ', '2 ', '1 ']
-        
-        const [continentOption, setContinentOption] = useState('AllContinents')    
+
+        const [continentOption, setContinentOption] = useState('AllContinents')
         const continentOptions = ["Africa", "Antarctica", "Asia", "Australia", "Europe", "NorthAmerica", "SouthAmerica"]
-        
+
         const [startMonth, setStartMonth] = useState('0')
         const [endMonth, setEndMonth] = useState('11')
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-        
+
         const [durationOption, setDurationOption] = useState('1mo 0days')
         const durationOptions = ["1mo 0 days", "1mo 3 days", "1mo 15 days", "2mo 0 days", "2mo 10 days"]
 
-        console.log(rateOption, rateOptions) 
-     
+        console.log(rateOption, rateOptions)
+
     return (
         <>
             <Card>
@@ -29,14 +30,14 @@
             </Card>
             <Row>
                 <Col md="6">
-                    <Card>
+                    <Card style={{minHeight: "330px"}}>
                         <CardBody>
-                            <div className=' d-flex justify-content-between align-items-center '>
+                            <div className=' d-flex justify-content-between align-items-center mb-1'>
                                 <p className=' fw-bold '>Average</p>
                                 <div>
-                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" 
-                                    type="button" 
-                                    data-bs-toggle="dropdown" 
+                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                         { rateOption + "star" }
                                     </button>
@@ -56,22 +57,17 @@
                             </div>
                             <p className=' mb-2'><span className=' fw-bolder '>Q</span> Base on <span className=' fs-5 fw-bolder'>0</span> publish review</p>
                             <div>
-                                <ul className=' list-unstyled'>
+                                <ul className=' list-unstyled mb-2'>
                                     {
                                         rateOptions.map((ele, index) => {
                                             return (
-                                                <li className= {rateOption === ele ? 
-                                                                    ' d-flex justify-content-evenly align-items-center mb-1 opacity-100' 
-                                                                   :
-                                                                   rateOption === "All " ?
-                                                                   ' d-flex justify-content-evenly align-items-center mb-1 opacity-100'
-                                                                   :
-                                                                    ' d-flex justify-content-evenly align-items-center mb-1 opacity-25' 
-                                                                }
+                                                <li className= {`d-flex justify-content-evenly align-items-center mb-1 ${
+                                                                    (rateOption === ele || rateOption === 'All ') ? 'opacity-100' : 'opacity-25'
+                                                                }`}
                                                 >
-                                                    <AiFillStar style={{color: "yellow", fontSize:"20px"}}/> 
-                                                    <span className=' fw-bold fs-5'>{ rateOptions.length - index }</span> 
-                                                    <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span> 
+                                                    <AiFillStar style={{color: "yellow", fontSize:"20px"}}/>
+                                                    <span className=' fw-bold fs-5'>{ rateOptions.length - index }</span>
+                                                    <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span>
                                                     0%
                                                 </li>
                                             )
@@ -86,7 +82,7 @@
                 <Col md="6">
                     <Card>
                         <CardBody>
-                            <div className=' d-flex justify-content-between align-items-center '>
+                            <div className=' d-flex justify-content-between align-items-center'>
                                 <p className=' fw-bold '>Top Countries in { continentOption }</p>
                                 {/* <p>All time</p> */}
                                 <div>
@@ -103,7 +99,10 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div className=' d-flex justify-content-evenly align-items-center mb-1 '>
+
+                            <DoughnutChart continent={continentOption.toLowerCase()}/>
+
+                            {/* <div className=' d-flex justify-content-evenly align-items-center mb-1 '>
                                 <div className={ `topCountryOuterDiv rounded-circle ${continentOption.toLowerCase()}` }>
                                     <div className='topCountryInnerDiv  rounded-circle'></div>
                                 </div>
@@ -113,7 +112,7 @@
                                         EMPTY
                                     </h6>
                                 </div>
-                            </div>
+                            </div> */}
                         </CardBody>
                     </Card>
                 </Col>
@@ -153,10 +152,10 @@
                     <h5 className=' fw-bolder  text-capitalize my-2 '>All reviews Growth</h5>
 
                     <div>
-                        
+
                         <BarChart  startMonth = {startMonth} endMonth= {endMonth} />
                     </div>
-                                        
+
                 </CardBody>
             </Card>
 
@@ -289,10 +288,10 @@
             </Row>
 
             <Row style={{ minHeight: "200px"}}>
-                
+
             </Row>
-            
-            
+
+
         </>
     )
     }

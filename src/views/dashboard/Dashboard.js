@@ -45,8 +45,8 @@ const Dashboard = () => {
                             <Card>
                                 <CardBody className=' d-flex justify-content-between'>
                                     <div>
-                                        <h4>CAC</h4>
-                                        <h3>₹100</h3>
+                                        <h4 className='customStyle brandonFont '>CAC</h4>
+                                        <h3 className='customStyle brandonFont '>₹100</h3>
                                     </div>
                                     {/* <div>
                                         <h4>CTR</h4>
@@ -66,8 +66,8 @@ const Dashboard = () => {
                             <Card>
                                 <CardBody className=' d-flex justify-content-between' style={{ height: `100px`}}>
                                     <div>
-                                        <h4>Earnings</h4>
-                                        <h3>0.00</h3>
+                                        <h4 className='customStyle brandonFont '>Earnings</h4>
+                                        <h3 className='customStyle brandonFont '>0.00</h3>
                                     </div>
                                     {/* <div>
                                         <h4>Earnings</h4>
@@ -84,7 +84,7 @@ const Dashboard = () => {
                     <Col sm='12'>
                         <Card>
                             <CardBody style={{ minHeight: "550px"}}>
-                                <h4>News Feed</h4>
+                                <h4 className='customStyle brandonFont '>News Feed</h4>
                                 <NewsFeed />
                             </CardBody>
                         </Card>
@@ -96,12 +96,12 @@ const Dashboard = () => {
                 <Col xl='4' sm='12'>
                     <Card>
                         <CardBody>
-                            <h4 style={{ lineHeight: `1.5rem`, marginBottom: `1rem`}}>Current Campaign</h4>
+                            <h4 className='customStyle brandonFont ' style={{ lineHeight: `1.5rem`, marginBottom: `1rem`}}>Current Campaign</h4>
                             <Row>
                                 <Col sm='7'>
-                                    <p className="card-text font-small-3">Product - Infiniti</p>
-                                    <p className="card-text font-small-3">Active -  Forever Free Plan</p>
-                                    <p className="card-text font-small-3">Start Date - </p>
+                                    <p className="customStyle brandonFont  card-text font-small-3">Product - Infiniti</p>
+                                    <p className="customStyle brandonFont  card-text font-small-3">Active -  Forever Free Plan</p>
+                                    <p className="customStyle brandonFont  card-text font-small-3">Start Date - </p>
                                 </Col>
                                 <Col sm='5'>
                                     <Row>
@@ -113,22 +113,22 @@ const Dashboard = () => {
                             </Row>
                             <Row>
                                 <Col xl='12'>
-                                    <p className="card-text font-small-3"><b>Plan Amount: --</b></p>
-                                    <p className="card-text font-small-3"><b>Spent: --</b></p>
-                                    <p className="card-text font-small-3"><b>Balance: --</b></p>
+                                    <p className="customStyle brandonFont  card-text font-small-3"><b>Plan Amount: --</b></p>
+                                    <p className="customStyle brandonFont  card-text font-small-3"><b>Spent: --</b></p>
+                                    <p className="customStyle brandonFont  card-text font-small-3"><b>Balance: --</b></p>
                                 </Col>
                             </Row>
                             <br />
                             <Row className="row d-flex justify-content-center align-items-center">
                                 <Col sm='7' className='d-flex justify-content-start align-items-center'>
 
-                                    <h5>
+                                    <h5 className='customStyle brandonFont '>
                                         Status:  <span className="badge bg-danger"> Inactive</span>  
                                     </h5>
 
                                 </Col>
                                 <Col sm='5' className='d-flex justify-content-center align-items-center'>
-                                    <a href="/merchant/strategy/1/"><button type="button" style={{ display: `inline`, padding: `0.786rem 1rem`, backgroundColor: `#28c76f !important`, border: `none`}} className="btn btn-primary waves-effect waves-float waves-light">Renew/ Upgrade</button></a>
+                                    <a href="/merchant/strategy/1/"><button type="button" style={{ display: `inline`, padding: `0.786rem 1rem`, backgroundColor: `#28c76f !important`, border: `none`}} className="customStyle brandonFont  btn btn-primary waves-effect waves-float waves-light">Renew/ Upgrade</button></a>
 
                                 </Col>
                                                 
@@ -146,7 +146,7 @@ const Dashboard = () => {
                                                 <BsWind />
                                             </div>
                                             <div style={{ height: "50px" }}>
-                                                <p className=' fs-5 fw-bolder text-center'>Invite a Business</p>
+                                                <p className=' fs-5 customStyle brandonFont  text-center'>Invite a Business</p>
                                             </div>
                                         </CardBody>
                                     </Card>
@@ -159,7 +159,7 @@ const Dashboard = () => {
                                                 <BsCircle />
                                             </div>
                                             <div style={{ height: "50px" }}>
-                                                <p className=' fs-5 fw-bolder text-center'>My Inner XIRCLS</p>
+                                                <p className=' fs-5 customStyle brandonFont  text-center'>My Inner XIRCLS</p>
                                             </div>
                                         </CardBody>
                                     </Card>
@@ -172,7 +172,7 @@ const Dashboard = () => {
                                                 <FiSettings />
                                             </div>
                                             <div style={{ height: "50px" }}>
-                                                <p className=' fs-5 fw-bolder text-center'>Campaign Settings</p>
+                                                <p className=' fs-5 customStyle brandonFont  text-center'>Campaign Settings</p>
                                             </div>
                                         </CardBody>
                                     </Card>
@@ -185,7 +185,7 @@ const Dashboard = () => {
                                                 <BiSolidOffer />
                                             </div>
                                             <div style={{ height: "50px" }}>
-                                                <p className=' fs-5 fw-bolder text-center'>My Offers</p>
+                                                <p className=' fs-5 customStyle brandonFont  text-center'>My Offers</p>
                                             </div>
                                         </CardBody>
                                     </Card>

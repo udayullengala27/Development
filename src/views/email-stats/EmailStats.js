@@ -16,7 +16,7 @@ const EmailStats = () => {
     const [filtersOption, setFiltersOption] =  useState([])
     const filtersOptions = ["Filter 1", "Filter 2", "Filter 3", "Filter 4", "Filter 5"]
 
-    const [selectedOptions, setSelectedOptions] = useState([])
+    const [selectedOptions, setSelectedOptions] = useState(['Sends', "Unique Clicks"])
   const handleOptionChange = (option) => {
     if (selectedOptions.includes(option)) {
       setSelectedOptions(selectedOptions.filter(item => item !== option))
