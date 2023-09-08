@@ -1,4 +1,4 @@
-import {  BookOpen, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye, AtSign, Gift } from 'react-feather'
+import {  BookOpen, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye, AtSign, Gift, Bell } from 'react-feather'
 
 export default [
   {
@@ -71,9 +71,15 @@ export default [
     navLink: '/merchant/referral-offers'
   },
   {
-    id: 'referralDashboard',
-    title: 'Referral Dashboard',
+    id: 'offersLog',
+    title: 'Offers Log',
     icon: <Gift size={20} />,
-    navLink: '/merchant/referral-dashboard'
+    navLink: '/merchant/offers-log'
+  },
+  {
+    id: 'popup-notification',
+    title: 'Popup NotIfication',
+    icon: <Bell size={20} />,
+    navLink: '/merchant/popup-notification'
   }
 ]

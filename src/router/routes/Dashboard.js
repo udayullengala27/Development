@@ -52,10 +52,6 @@ const Dashboard_Routes = [
   {
     path: '/merchant/campaign',
     element: <WizardModernVertical />
-  },
-  {
-    path: '/merchant/offers-log',
-    element: <OffersLog />
   }
 ]
 

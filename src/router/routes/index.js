@@ -11,6 +11,7 @@ import PublicRoute from '@components/routes/PublicRoute'
 
 // ** Utils
 import { isObjEmpty } from '@utils'
+import Homes_Routes from "./Home"
 import Dashboard_Routes from './Dashboard'
 import Customers_Routes from './Customer'
 import Invoices_Routes from './Invoices'
@@ -30,6 +31,7 @@ const DefaultRoute = '/merchant/dashboard'
 
 // ** Merge Routes
 const Routes = [
+  ...Homes_Routes,
   ...Dashboard_Routes,
   ...Customers_Routes,
   ...Invoices_Routes

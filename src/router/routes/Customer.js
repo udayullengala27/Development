@@ -6,7 +6,8 @@ import EmailKlaviyo from '@src/views/email-klaviyo/EmailKlaviyo'
 import ReferralOffers from '@src/views/Referral/ReferralOffers'
 import Referrals from '@src/views/referral-dashboard/ReferralDashboard'
 const Leads = lazy(() => import('@src/views/Leads/Leads'))
-
+import OffersLog from '@src/views/offers-log/OffersLog'
+import PopupNotification from '@src/views/popup-notification/PopupNotification'
 
 const Customers_Routes = [
   {
@@ -36,6 +37,14 @@ const Customers_Routes = [
   {
     path: '/merchant/referral-dashboard',
     element: <Referrals />
+  },
+  {
+    path: '/merchant/offers-log',
+    element: <OffersLog />
+  },
+  {
+    path: '/merchant/popup-notification',
+    element: <PopupNotification />
   }
 ]
 
