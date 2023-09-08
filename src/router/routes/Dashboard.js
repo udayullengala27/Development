@@ -1,13 +1,15 @@
 import { lazy } from 'react'
-import Demo from '../../views/dashboard/Demo'
-const Dashboard = lazy(() => import('../../views/dashboard/Dashboard'))
-import Report from '../../views/Report/Report'
-import Notification from '../../views/Notification/Notification'
-import Statistics from '../../views/Statistics/Statistics'
-import Analytics from '../../views/analytics/Analytics'
-import EmailStats from '../../views/email-stats/EmailStats'
-import OverallStats from '../../views/overall-stats/OverallStats'
-import ConsentStats from '../../views/consent-stats/ConsentStats'
+import Demo from '@src/views/dashboard/Demo'
+const Dashboard = lazy(() => import('@src/views/dashboard/Dashboard'))
+import Report from '@src/views/Report/Report'
+import Notification from '@src/views/Notification/Notification'
+import Statistics from '@src/views/Statistics/Statistics'
+import Analytics from '@src/views/analytics/Analytics'
+import EmailStats from '@src/views/email-stats/EmailStats'
+import OverallStats from '@src/views/overall-stats/OverallStats'
+import ConsentStats from '@src/views/consent-stats/ConsentStats'
+import WizardModernVertical from '@src/views/Campaign/Campaign'
+import OffersLog from '@src/views/offers-log/OffersLog'
 
 
 const Dashboard_Routes = [
@@ -46,6 +48,14 @@ const Dashboard_Routes = [
   {
     path: '/merchant/consent-statistics',
     element: <ConsentStats />
+  },
+  {
+    path: '/merchant/campaign',
+    element: <WizardModernVertical />
+  },
+  {
+    path: '/merchant/offers-log',
+    element: <OffersLog />
   }
 ]
 

@@ -1,0 +1,15 @@
+.campaignPopCard {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s linear;
+    z-index: 1;
+}
+
+.campaignPopUp {
+    top: -300px;
+}
+
+.campaignPopDown {
+    top: 100px;
+}

@@ -1,12 +1,14 @@
 import {useState} from 'react'
 import { useNavigate} from "react-router-dom"
 import { Card, CardBody } from 'reactstrap'
+import axios from 'axios'
 
 const Emails = () => {
     const navigate = useNavigate()
 
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
+    const [responseData, setResponseData] = useState(null)
 
     const handleFullNameChange = (event) => {
         setFullName(event.target.value)
@@ -16,13 +18,28 @@ const Emails = () => {
         setEmail(event.target.value)
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit =  async (event) => {
         event.preventDefault()
-        // console.log('Full Name:', fullName)
-        // console.log('Email:', email)
-        setFullName('')
-        setEmail('')
-        navigate("/merchant/email-verify")
+        const formData = new FormData()
+        formData.append("email", email)
+        formData.append("username", fullName)
+        try {
+            const res = await axios.post(
+                "https://9fab-103-197-226-50.ngrok-free.app/accounts/subscribe/",
+                formData
+            )
+        
+            setResponseData(res.data)   
+            setFullName('')
+            setEmail('')
+            if (responseData && responseData?.success) {
+                navigate("/merchant/email-verify")
+            } else {
+                navigate("/merchant/emails")
+            }
+        } catch (error) {
+            console.error("Error:", error)
+        }
     }
 
     

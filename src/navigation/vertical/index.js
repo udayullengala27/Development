@@ -1,4 +1,4 @@
-import {  BookOpen, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye } from 'react-feather'
+import {  BookOpen, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye, AtSign, Gift } from 'react-feather'
 
 export default [
   {
@@ -31,14 +31,8 @@ export default [
   {
     id: 'emailStats',
     title: 'Email Stats',
-    icon: <Mail size={20} />,
-    navLink: '/merchant/email-statistics'
-  },
-  {
-    id: 'emails',
-    title: 'Emails',
     icon: <Airplay size={20} />,
-    navLink: '/merchant/emails'
+    navLink: '/merchant/email-statistics'
   },
   {
     id: 'overallStats',
@@ -51,5 +45,35 @@ export default [
     title: 'Consent Stats',
     icon: <Eye size={20} />,
     navLink: '/merchant/consent-statistics'
+  },
+  {
+    id: 'emails',
+    title: 'Emails',
+    icon: <Mail size={20} />,
+    navLink: '/merchant/emails'
+  },
+  {
+    id: 'campaignTemplate',
+    title: 'Campaign Template',
+    icon: <AtSign size={20} />,
+    navLink: '/merchant/campaign-template'
+  },
+  {
+    id: 'emailKlaviyo',
+    title: 'Email Klaviyo',
+    icon: <Mail size={20} />,
+    navLink: '/merchant/email-klaviyo'
+  },
+  {
+    id: 'referralOffers',
+    title: 'Referral offers',
+    icon: <Gift size={20} />,
+    navLink: '/merchant/referral-offers'
+  },
+  {
+    id: 'referralDashboard',
+    title: 'Referral Dashboard',
+    icon: <Gift size={20} />,
+    navLink: '/merchant/referral-dashboard'
   }
 ]
