@@ -1,4 +1,7 @@
 #heroHeading {
+    width: 600px;
     font-size: 40px;
     font-weight: 900 !important;
+    margin: 0 auto;
+    margin-bottom: 100px;
 }

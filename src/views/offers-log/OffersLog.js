@@ -1,15 +1,15 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { Card, CardBody, Col, Row } from 'reactstrap'
 import { AiFillDelete } from "react-icons/ai"
 import { BiEditAlt } from "react-icons/bi"
 import offers from "./data.json"
 
 const OffersLog = () => {
-    const [offersList, setOffersList] = useState({})
+  const [offersList, setOffersList] = useState({})
 
-    
-    useEffect(() => {
-      setOffersList(offers)
+
+  useEffect(() => {
+    setOffersList(offers)
     //     fetch(`https://api.xircles.in/referral/get_offers/`, {
     //       method: "GET",
     //       headers: {
@@ -26,70 +26,70 @@ const OffersLog = () => {
     //   })
     //     // setOffersList(["Offer 1", "Offer 2", "Offer 3", "Offer 4", "Offer 5"])
     //     // console.log(offersList)
-    }, [])
+  }, [])
 
-    // console.log(offersList)
+  // console.log(offersList)
 
   return (
     <>
-        <Card>
-            <CardBody>
-                <h3>Offers List</h3>
-            </CardBody>
-        </Card>
+      <Card>
+        <CardBody>
+          <h3>Offers List</h3>
+        </CardBody>
+      </Card>
 
-        <button type="button" className='btn btn-primary fs-4 mb-2'onClick={() => handleDelete()}>+ Create</button>
+      <button type="button" className='btn btn-primary fs-4 mb-2' onClick={() => handleDelete()}>+ Create</button>
 
-        <Row>
+      <Row>
         {
-            offersList ? (
-                offersList?.data?.map(offer => {
-                return (
-                  <Col  key={offer.id} md={6}>
-                    <Card className='rounded-2'>
-                      <CardBody>
-                          <div className='d-flex justify-content-between align-items-center'>
-                              <h3>Offer {offer.id}</h3>
-                              <div className='d-flex justify-content-center align-items-center gap-1'>
-                                  <button type="button" className='btn btn-primary' onClick={() => handleEdit(offer)}><BiEditAlt /> Edit</button>
-                                  <button type="button" className='btn btn-danger' onClick={() => handleDelete(offer.id)}><AiFillDelete /> Delete</button>
-                              </div>
-                          </div>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                )
+          offersList ? (
+            offersList?.data?.map(offer => {
+              return (
+                <Col key={offer.id} md={6}>
+                  <Card className='rounded-2'>
+                    <CardBody>
+                      <div className='d-flex justify-content-between align-items-center'>
+                        <h3>Offer {offer.id}</h3>
+                        <div className='d-flex justify-content-center align-items-center gap-1'>
+                          <button type="button" className='btn btn-primary' onClick={() => handleEdit(offer)}><BiEditAlt /> Edit</button>
+                          <button type="button" className='btn btn-danger' onClick={() => handleDelete(offer.id)}><AiFillDelete /> Delete</button>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Col>
+              )
             })
-            ) : (
-                <p>No offers</p>
-            )
+          ) : (
+            <p>No offers</p>
+          )
         }
-        </Row>
+      </Row>
 
-        <Row>
+      <Row>
         <Col md={6} className='p-0'>
           <Card style={{ overflow: 'hidden' }} className='mb-3 ms-2'>
             <CardBody>
               <div className='d-flex flex-column justify-items-center align-items-baseline'>
-                  <h3 className='ms-1 mb-1'>Referrer Offer</h3>
+                <h3 className='ms-1 mb-1'>Referrer Offer</h3>
               </div>
               <div className="d-flex row mx-1">
-                  <div className="col-4 mb-1">
-                      <h4 className=''>Value</h4>
-                      <p className=' fs-5'>25</p>
-                  </div>
-                  <div className="col-4">
-                      <h4>Offer Type</h4>
-                      <p className=' fs-5'>Percentage</p>
-                  </div>
-                  <div className="col-4 mb-1">
-                      <h4 className=''>Minimum</h4>
-                      <p className=' fs-5'>12</p>
-                  </div>
+                <div className="col-4 mb-1">
+                  <h4 >Value</h4>
+                  <p className=' fs-5'>25</p>
+                </div>
+                <div className="col-4">
+                  <h4>Offer Type</h4>
+                  <p className=' fs-5'>Percentage</p>
+                </div>
+                <div className="col-4 mb-1">
+                  <h4 >Minimum</h4>
+                  <p className=' fs-5'>12</p>
+                </div>
               </div>
               <div className='d-flex justify-content-end align-items-center gap-1'>
-                  <button type="button" className='btn btn-primary' onClick={() => handleEdit(offer)}><BiEditAlt /> Edit</button>
-                  <button type="button" className='btn btn-danger' onClick={() => handleDelete(offer.id)}><AiFillDelete /> Delete</button>
+                <button type="button" className='btn btn-primary' onClick={() => handleEdit(offer)}><BiEditAlt /> Edit</button>
+                <button type="button" className='btn btn-danger' onClick={() => handleDelete(offer.id)}><AiFillDelete /> Delete</button>
               </div>
             </CardBody>
           </Card>
@@ -104,7 +104,7 @@ const OffersLog = () => {
               </div>
               <form className="d-flex row mx-1">
                   <div className="col-4 mb-2">
-                      <h5 className=''>Value</h5>
+                      <h5 >Value</h5>
                       <input type="number" className="form-control" min={1} value={referrerOffer1Value} onChange={(e) => setReferrerOffer1Value(e.target.value)} />
                   </div>
                   <div className="col-4">
@@ -117,7 +117,7 @@ const OffersLog = () => {
                       </div>
                   </div>
                   <div className="col-4 mb-2">
-                      <h5 className=''>Minimum</h5>
+                      <h5 >Minimum</h5>
                       <input type="number" className="form-control" min={1} value={referrerOffer1Min} onChange={(e) => setReferrerOffer1Min(e.target.value)} />
                   </div>
               </form>

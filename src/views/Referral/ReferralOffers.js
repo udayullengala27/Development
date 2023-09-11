@@ -34,16 +34,16 @@ const ReferralOffers = () => {
       // form_data.append('status', statusActive ? '1' : '0')
 
       fetch(`https://api.xircles.in/referral/referralpoints/`, {
-          method: "POST",
-          body: form_data
+        method: "POST",
+        body: form_data
       })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          console.log(data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     }
 
     // setReferrerOffer1Min(0)
@@ -52,7 +52,7 @@ const ReferralOffers = () => {
     // setReferrerOffer2Min(0)
     // setReferrerOffer2Type('PERCENTAGE')
     // setReferrerOffer2Value(0)
-}
+  }
   return (
     <>
       <Card>
@@ -62,67 +62,67 @@ const ReferralOffers = () => {
       </Card>
 
       <h3 className=' fw-bolder mb-1'>Referral</h3>
-      
+
       <Row>
         <Col md={6} className='p-0'>
           <Card style={{ overflow: 'hidden' }} className='mb-3 ms-2'>
             <CardBody>
-                                <div className='d-flex flex-column justify-items-center align-items-baseline'>
-                                    <h3 className='ms-1'>Referrer Offer</h3>
-                                    <p>{errorMsg1}</p>
-                                </div>
-                                <form className="d-flex row mx-1">
-                                    <div className="col-4 mb-2">
-                                        <h5 className=''>Value</h5>
-                                        <input type="number" className="form-control" min={1} value={referrerOffer1Value} onChange={(e) => setReferrerOffer1Value(e.target.value)} />
-                                    </div>
-                                    <div className="col-4">
-                                        <h5>Offer Type</h5>
-                                        <div className="d-flex align-items-center">
-                                            <select className="form-select m-0" onChange={(e) => setReferrerOffer1Type(e.target.value)}>
-                                                <option value='PERCENTAGE'>Percentage</option>
-                                                <option value='VALUE'>Value</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-4 mb-2">
-                                        <h5 className=''>Minimum</h5>
-                                        <input type="number" className="form-control" min={1} value={referrerOffer1Min} onChange={(e) => setReferrerOffer1Min(e.target.value)} />
-                                    </div>
-                                </form>
+              <div className='d-flex flex-column justify-items-center align-items-baseline'>
+                <h3 className='ms-1'>Referrer Offer</h3>
+                <p>{errorMsg1}</p>
+              </div>
+              <form className="d-flex row mx-1">
+                <div className="col-4 mb-2">
+                  <h5 >Value</h5>
+                  <input type="number" className="form-control" min={1} value={referrerOffer1Value} onChange={(e) => setReferrerOffer1Value(e.target.value)} />
+                </div>
+                <div className="col-4">
+                  <h5>Offer Type</h5>
+                  <div className="d-flex align-items-center">
+                    <select className="form-select m-0" onChange={(e) => setReferrerOffer1Type(e.target.value)}>
+                      <option value='PERCENTAGE'>Percentage</option>
+                      <option value='VALUE'>Value</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="col-4 mb-2">
+                  <h5 >Minimum</h5>
+                  <input type="number" className="form-control" min={1} value={referrerOffer1Min} onChange={(e) => setReferrerOffer1Min(e.target.value)} />
+                </div>
+              </form>
             </CardBody>
           </Card>
         </Col>
 
         <Col md={6} className='p-0'>
-                        <Card style={{ overflow: 'hidden' }} className='mb-3 ms-2'>
-                            <CardBody>
-                                <div className='d-flex flex-column justify-items-center align-items-baseline'>
-                                    <h3 className='ms-1'>Referrer Offer</h3>
-                                    <p>{errorMsg2}</p>
-                                </div>
-                                <form className="d-flex row mx-1">
-                                    <div className="col-4 mb-2">
-                                        <h5 className=''>Value</h5>
-                                        <input type="number" className="form-control" min={1} value={referrerOffer2Value} onChange={(e) => setReferrerOffer2Value(e.target.value)} />
-                                    </div>
-                                    <div className="col-4">
-                                        <h5>Offer Type</h5>
-                                        <div className="d-flex align-items-center">
-                                            <select className="form-select m-0" onChange={(e) => setReferrerOffer2Type(e.target.value)}>
-                                                <option value='PERCENTAGE'>Percentage</option>
-                                                <option value='VALUE'>Value</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-4 mb-2">
-                                        <h5 className=''>Minimum</h5>
-                                        <input type="number" className="form-control" min={1} value={referrerOffer2Min} onChange={(e) => setReferrerOffer2Min(e.target.value)} />
-                                    </div>
-                                </form>
-                            </CardBody>
-                        </Card>
-      
+          <Card style={{ overflow: 'hidden' }} className='mb-3 ms-2'>
+            <CardBody>
+              <div className='d-flex flex-column justify-items-center align-items-baseline'>
+                <h3 className='ms-1'>Referrer Offer</h3>
+                <p>{errorMsg2}</p>
+              </div>
+              <form className="d-flex row mx-1">
+                <div className="col-4 mb-2">
+                  <h5 >Value</h5>
+                  <input type="number" className="form-control" min={1} value={referrerOffer2Value} onChange={(e) => setReferrerOffer2Value(e.target.value)} />
+                </div>
+                <div className="col-4">
+                  <h5>Offer Type</h5>
+                  <div className="d-flex align-items-center">
+                    <select className="form-select m-0" onChange={(e) => setReferrerOffer2Type(e.target.value)}>
+                      <option value='PERCENTAGE'>Percentage</option>
+                      <option value='VALUE'>Value</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="col-4 mb-2">
+                  <h5 >Minimum</h5>
+                  <input type="number" className="form-control" min={1} value={referrerOffer2Min} onChange={(e) => setReferrerOffer2Min(e.target.value)} />
+                </div>
+              </form>
+            </CardBody>
+          </Card>
+
         </Col>
 
         {/* <Col md={4}>
@@ -148,10 +148,10 @@ const ReferralOffers = () => {
         </Col> */}
       </Row>
       <div className="mb-2">
-                <div className="d-flex justify-content-end">
-                    <button className='btn btn-primary' style={{ width: '200px' }} onClick={handleSubmit} >Save</button>
-                </div>
-            </div>
+        <div className="d-flex justify-content-end">
+          <button className='btn btn-primary' style={{ width: '200px' }} onClick={handleSubmit} >Save</button>
+        </div>
+      </div>
     </>
   )
 }
