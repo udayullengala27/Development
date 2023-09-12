@@ -1,7 +1,10 @@
 import { lazy } from 'react'
-const Leads = lazy(() => import('../../views/Leads/Leads'))
-const ProductReview = lazy(() => import('../../views/Product_Review/ProductReview'))
-const Home = lazy(() => import('../../views/home/Home'))
+import HomePageRecommendation from '../../views/HomePageRecommendation/HomePageRecommendation'
+const Leads = lazy(() => import('@src/views/Leads/Leads'))
+const ProductReview = lazy(() => import('@src/views/Product_Review/ProductReview'))
+const Home = lazy(() => import('@src/views/home/Home'))
+const Recommendation = lazy(() => import('@src/views/recommendation/Recommendation'))
+const HomepageRecommendation = lazy(() => import('@src/views/HomePageRecommendation/HomePageRecommendation'))
 
 
 const Customers_Routes = [
@@ -16,6 +19,14 @@ const Customers_Routes = [
   {
     path: '/merchant/home',
     element: <Home/>
+  },
+  {
+    path: '/merchant/recommendation',
+    element: <Recommendation/>
+  },
+  {
+    path: '/merchant/homepageRecommendation',
+    element: <HomePageRecommendation/>
   }
 ]
 

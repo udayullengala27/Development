@@ -27,5 +27,17 @@ export default [
     title: 'Home',
     icon: <User size={20} />,
     navLink: '/merchant/home'
+  },
+  {
+    id: 'recommendation',
+    title: 'Recommendation',
+    icon: <User size={20} />,
+    navLink: '/merchant/recommendation'
+  },
+  {
+    id: 'homepage',
+    title: 'Homepage Recommendation',
+    icon: <User size={20} />,
+    navLink: '/merchant/homepageRecommendation'
   }
 ]

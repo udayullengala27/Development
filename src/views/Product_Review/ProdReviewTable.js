@@ -5,7 +5,7 @@ import { data, Column } from '../Product_Review/Column'
 // ** Third Party Components
 import { ChevronDown } from 'react-feather'
 import DataTable from 'react-data-table-component'
-import { Input } from 'reactstrap'
+// import { Input } from 'reactstrap'
 
 // ** Reactstrap Imports
 // import { Card, CardHeader, CardTitle } from 'reactstrap'

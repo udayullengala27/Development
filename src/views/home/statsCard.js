@@ -32,20 +32,18 @@ const StatsCard = () => {
                     data.map((currElem) => {
                         return (
                             <>
-                            <Col xs={4}>
-                                <div class="media d-flex">
-                                    <Avatar color={currElem.color} icon={currElem.icon} className='me-1' style={{borderRadius:"0" }}/>
-                                    <div className='my-auto'>
-                                        <h6 className='fw-medium' style={{marginBottom:"6px"}}>{currElem.title}</h6>
-                                        <CardText className= 'fw-bold' color={currElem.color} style={{fontSize:"20px"}}>{currElem.subtitle}</CardText>
+                                <Col xs={4}>
+                                    <div class="media d-flex">
+                                        <Avatar color={currElem.color} icon={currElem.icon} className='me-1' style={{ borderRadius: "0" }} />
+                                        <div className='my-auto'>
+                                            <h6 className='fw-medium' style={{ marginBottom: "6px" }}>{currElem.title}</h6>
+                                            <CardText className='fw-bold' color={currElem.color} style={{ fontSize: "20px" }}>{currElem.subtitle}</CardText>
+                                        </div>
                                     </div>
-                                </div>
-                            </Col>
+                                </Col>
                             </>
-
                         )
                     })
-
                 }
 
             </Row>
