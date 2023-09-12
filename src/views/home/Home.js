@@ -22,6 +22,7 @@ const Home = () => {
       <Section5 />
       <Section6 />
       <Section7 />
+      <hr align="center" style={{ width: "75%" }} />
       <Footer />
     </div>
   )

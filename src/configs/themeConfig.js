@@ -4,7 +4,7 @@
 const themeConfig = {
   app: {
     appName: 'XIRCLS',
-    appLogoImage: require('@src/assets/images/logo/XIRCLS_LOGO.png').default
+    appLogoImage: require('@src/assets/images/logo/XIRCLS_LOGO.png')
   },
   layout: {
     isRTL: false,

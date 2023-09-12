@@ -3,7 +3,7 @@ import React from 'react'
 const Section2 = () => {
     return (
         <div className='py-5'>
-            <h1 className=' text-center'>We’re On A Mission To Help Businesses  Grow</h1>
+            <h1 className=' text-center text-black'>We’re On A Mission To Help Businesses  Grow</h1>
             <div className='mt-5 mb-5 d-flex justify-content-center align-items-center gap-3'>
                 <div className=' d-flex flex-column justify-content-between align-items-center gap-1' style={{ width: "200px" }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="106" height="96" viewBox="0 0 106 96" fill="none">
