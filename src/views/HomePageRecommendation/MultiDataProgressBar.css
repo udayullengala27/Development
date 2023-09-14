@@ -1,0 +1,21 @@
+#SvgjsG1214 {
+    display: none;
+}
+
+line {
+    display: none;
+}
+
+.apexcharts-title-text {
+    /* Add your custom styles here */
+    font-size: 16px;
+    font-weight: bold;
+    color: blue;
+    margin-left: "2rem";
+    /* font-family: Arial, sans-serif; */
+}
+
+.apexcharts-canvas svg rect {
+    rx: 8px; /* Adjust the border radius to control the curvature */
+    ry: 8px; /* Adjust the border radius to control the curvature */
+  }
