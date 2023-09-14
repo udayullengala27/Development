@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Card, CardBody, Col, Row } from 'reactstrap'
+// import offers from "./data.json"
 
 const ReferralOffers = () => {
+  const navigate = useNavigate()
   const [errorMsg1, setErrorMsg1] = useState("")
   const [errorMsg2, setErrorMsg2] = useState("")
 
@@ -12,6 +15,9 @@ const ReferralOffers = () => {
   const [referrerOffer2Value, setReferrerOffer2Value] = useState(0)
   const [referrerOffer2Type, setReferrerOffer2Type] = useState('PERCENTAGE')
   const [referrerOffer2Min, setReferrerOffer2Min] = useState(0)
+
+  const [status, setStatus] = useState('active')
+  console.log(status)
 
   const handleSubmit = () => {
     setErrorMsg1("")
@@ -30,40 +36,53 @@ const ReferralOffers = () => {
       form_data.append('referree_type', referrerOffer2Type)
       form_data.append('referree_minimum', referrerOffer2Min)
 
-      // const statusActive = document.getElementById('statusactive').checked
-      // form_data.append('status', statusActive ? '1' : '0')
+      const statusActive = document.getElementById('statusactive').checked
+      form_data.append('status', statusActive ? true : false)
+
+      form_data.append('action', "CREATE")
 
       fetch(`https://api.xircles.in/referral/referralpoints/`, {
         method: "POST",
+        headers: {
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0NzAwNzE5LCJpYXQiOjE2OTQ2NzA3MTksImp0aSI6ImM1NzA1NmI5ODQxOTQzZTE5YTg3YzUxYTRjMjBmMWIwIiwidXNlcl9pZCI6MTg3MTc2fQ.mJN0H5KzuCQnna6ZIX4NovPVs7tfhR5DI5QpvjNQXi0",
+          "Api-key": "Fv14sMRkz8uYqd3VMbKy5U+7h6QE4Rcb7MeG1d/PoXU="
+        },
         body: form_data
       })
-        .then((resp) => resp.json())
+        .then((resp) => {
+          if (!resp.ok) {
+            throw new Error('Network response was not ok')
+          }
+          return resp.json()
+        })
         .then((data) => {
           console.log(data)
+          navigate("/merchant/offers-log")
         })
         .catch((error) => {
           console.log(error)
         })
     }
 
-    // setReferrerOffer1Min(0)
-    // setReferrerOffer1Type('PERCENTAGE')
-    // setReferrerOffer1Value(0)
-    // setReferrerOffer2Min(0)
-    // setReferrerOffer2Type('PERCENTAGE')
-    // setReferrerOffer2Value(0)
+    setReferrerOffer1Min(0)
+    setReferrerOffer1Type('PERCENTAGE')
+    setReferrerOffer1Value(0)
+    setReferrerOffer2Min(0)
+    setReferrerOffer2Type('PERCENTAGE')
+    setReferrerOffer2Value(0)
   }
   return (
     <>
       <Card>
         <CardBody>
-          <h2 className=' fw-bolder'>Points {">"} Actions</h2>
+          <h2 className=' fw-bolder'>Points {">"} Create</h2>
         </CardBody>
       </Card>
 
       <h3 className=' fw-bolder mb-1'>Referral</h3>
 
       <Row>
+
         <Col md={6} className='p-0'>
           <Card style={{ overflow: 'hidden' }} className='mb-3 ms-2'>
             <CardBody>
@@ -147,6 +166,23 @@ const ReferralOffers = () => {
           </Card>
         </Col> */}
       </Row>
+
+      <Card className=' w-25'>
+        <CardBody>
+          <h3 className='mb-1'>Status</h3>
+          <div className=' d-flex gap-2'>
+            <div className="form-check pb-1">
+              <input className="form-check-input" type="radio" name="status" id="statusactive" checked onChange={() => setStatus('active')} />
+              <label>Active</label>
+            </div>
+            <div className="form-check">
+              <input className="form-check-input" type="radio" name="status" id="statusactive" onChange={() => setStatus('active')} />
+              <label>Inactive</label>
+            </div>
+          </div>
+        </CardBody>
+      </Card>
+
       <div className="mb-2">
         <div className="d-flex justify-content-end">
           <button className='btn btn-primary' style={{ width: '200px' }} onClick={handleSubmit} >Save</button>

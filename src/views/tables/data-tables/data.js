@@ -19,7 +19,7 @@ const status = {
 // ** Get initial Data
 
 
-export const data = [{name: 'uday', phone: '909090909', email: 'uday212727@gmail.com', id: "1"}]
+export const data = [{ name: 'uday', phone: '909090909', email: 'uday212727@gmail.com', id: "1" }]
 
 
 // ** Table Zero Config Column

@@ -10,6 +10,7 @@ import OverallStats from '@src/views/overall-stats/OverallStats'
 import ConsentStats from '@src/views/consent-stats/ConsentStats'
 import WizardModernVertical from '@src/views/Campaign/Campaign'
 import OffersLog from '@src/views/offers-log/OffersLog'
+import SmsReports from '@src/views/sms-reports/SmsReports'
 
 
 const Dashboard_Routes = [
@@ -52,6 +53,10 @@ const Dashboard_Routes = [
   {
     path: '/merchant/campaign',
     element: <WizardModernVertical />
+  },
+  {
+    path: '/merchant/sms-reports',
+    element: <SmsReports />
   }
 ]
 

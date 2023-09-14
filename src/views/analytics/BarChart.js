@@ -7,7 +7,7 @@ const BarChart = (props) => {
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
-]
+  ]
 
   const handleGenerate = () => {
     const startMonthIndex = parseInt(startMonth)
@@ -16,23 +16,23 @@ const BarChart = (props) => {
 
 
     if (!isNaN(startMonthIndex) && !isNaN(endMonthIndex)) {
-        const selectedMonths = []
+      const selectedMonths = []
 
-        if (endMonthIndex >= startMonthIndex) {
-            selectedMonths.push(...months.slice(startMonthIndex, endMonthIndex + 1))
-        } else {
-            selectedMonths.push(...months.slice(startMonthIndex))
-            selectedMonths.push(...months.slice(0, endMonthIndex + 1))
-        }
-        return {selectedMonths, data:  data.splice(0, selectedMonths.length)}
+      if (endMonthIndex >= startMonthIndex) {
+        selectedMonths.push(...months.slice(startMonthIndex, endMonthIndex + 1))
+      } else {
+        selectedMonths.push(...months.slice(startMonthIndex))
+        selectedMonths.push(...months.slice(0, endMonthIndex + 1))
+      }
+      return { selectedMonths, data: data.splice(0, selectedMonths.length) }
     } else {
-        return { 
-          selectedMonths: [
+      return {
+        selectedMonths: [
           'January', 'February', 'March', 'April', 'May', 'June',
           'July', 'August', 'September', 'October', 'November', 'December'
-          ], 
-          data
-        }
+        ],
+        data
+      }
     }
   }
 
@@ -50,18 +50,18 @@ const BarChart = (props) => {
       }
     ]
   }
-  
+
   const chartOptions = {
     maintainAspectRatio: false,
     scales: {
       x: {
         grid: {
-          display: false 
+          display: false
         }
       },
       y: {
         grid: {
-          display: false 
+          display: false
         }
       }
     },
@@ -70,7 +70,7 @@ const BarChart = (props) => {
         display: false
       }
     }
-  }  
+  }
 
   return (
     <div className=' mb-2 ' style={{ height: '500px' }}>

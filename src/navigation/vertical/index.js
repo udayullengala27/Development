@@ -1,4 +1,4 @@
-import {  BookOpen, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye, AtSign, Gift, Bell } from 'react-feather'
+import { BookOpen, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye, AtSign, Gift, Bell, MessageSquare } from 'react-feather'
 
 export default [
   {
@@ -65,21 +65,33 @@ export default [
     navLink: '/merchant/email-klaviyo'
   },
   {
-    id: 'referralOffers',
-    title: 'Referral offers',
-    icon: <Gift size={20} />,
-    navLink: '/merchant/referral-offers'
-  },
-  {
     id: 'offersLog',
     title: 'Offers Log',
     icon: <Gift size={20} />,
     navLink: '/merchant/offers-log'
   },
   {
+    id: 'referralOffers',
+    title: 'Referral offers',
+    icon: <Gift size={20} />,
+    navLink: '/merchant/referral-offers'
+  },
+  {
+    id: 'referralOffersEdit',
+    title: 'Referral offers edit',
+    icon: <Gift size={20} />,
+    navLink: '/merchant/referral-offers-edit'
+  },
+  {
     id: 'popup-notification',
     title: 'Popup NotIfication',
     icon: <Bell size={20} />,
     navLink: '/merchant/popup-notification'
+  },
+  {
+    id: 'sms-reports',
+    title: 'Sms Reports',
+    icon: <MessageSquare size={20} />,
+    navLink: '/merchant/sms-reports'
   }
 ]

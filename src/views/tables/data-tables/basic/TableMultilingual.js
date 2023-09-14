@@ -13,7 +13,7 @@ import DataTable from 'react-data-table-component'
 // ** Reactstrap Imports
 import { Card, Input, Row, Col } from 'reactstrap'
 
-export const data = [{age: "63", avatar: "1.jpg", city: "Hinigaran", email: "bcoulman1@yolasite.com", experience: "3 Years", full_name: "Bailie Coulman", id: 1, post: "VP Quality Control", responsive_id: "", salary: "$13633.69", start_date: "05/20/2018", status: 2}]
+export const data = [{ age: "63", avatar: "1.jpg", city: "Hinigaran", email: "bcoulman1@yolasite.com", experience: "3 Years", full_name: "Bailie Coulman", id: 1, post: "VP Quality Control", responsive_id: "", salary: "$13633.69", start_date: "05/20/2018", status: 2 }]
 
 const DataTableWithButtons = () => {
   // ** State
@@ -30,8 +30,8 @@ const DataTableWithButtons = () => {
     setCurrentPage(page.selected)
   }
 
-   // ** Function to handle filter
-   const handleFilter = e => {
+  // ** Function to handle filter
+  const handleFilter = e => {
     const value = e.target.value
     let updatedData = []
     setSearchValue(value)
@@ -139,7 +139,7 @@ const DataTableWithButtons = () => {
         </Col>
       </Row>
       <div className='react-dataTable'>
-        { data ? <DataTable
+        {data ? <DataTable
           pagination
           selectableRowsNoSelectAll
           columns={multiLingColumns}
@@ -151,8 +151,8 @@ const DataTableWithButtons = () => {
           data={searchValue.length ? filteredData : data}
         /> : <div className="text-center"> <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
-        </div></div>  }
-        
+        </div></div>}
+
       </div>
     </Card>
   )
