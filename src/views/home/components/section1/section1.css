@@ -1,0 +1,27 @@
+.sect1Card {
+    width: 40%;
+}
+
+.sect1Card:nth-child(1) img {
+    width: 350px;
+}
+
+@media screen and (max-width: 1000px) {
+    .sect1Card {
+        width: 80%;
+        align-items: center;
+    }
+
+    .sect1Card:nth-child(2) {
+        text-align: center;
+    }
+
+    .sect1Card:nth-child(2) p {
+        width: 100% !important;
+    }
+
+    .sect1Card:nth-child(1) img {
+        width: 300px;
+    }
+
+}

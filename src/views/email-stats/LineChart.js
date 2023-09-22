@@ -20,39 +20,39 @@ const LineChart = (props) => {
   ]
 
   const chartOptions = [
-    { 
-        title:"Sends",
-        color: 'rgba(70, 141, 224, 255)'
+    {
+      title: "Sends",
+      color: 'rgba(70, 141, 224, 255)'
     },
-    { 
-        title:"Deliveries",
-        color: 'rgba(97, 213, 227, 255)'
+    {
+      title: "Deliveries",
+      color: 'rgba(97, 213, 227, 255)'
     },
-    { 
-        title:"Total Opens",
-        color: 'rgba(246, 191, 51, 255)'
+    {
+      title: "Total Opens",
+      color: 'rgba(246, 191, 51, 255)'
     },
-    { 
-        title:"Unique Opens",
-        color: 'rgba(205, 121, 196, 255)'
+    {
+      title: "Unique Opens",
+      color: 'rgba(205, 121, 196, 255)'
     },
-    { 
-        title:"Unique Clicks",
-        color: 'rgba(238, 138, 88, 255)'
+    {
+      title: "Unique Clicks",
+      color: 'rgba(238, 138, 88, 255)'
     },
-    { 
-        title:"Other Opens",
-        color: 'rgba(66, 115, 173, 255)'
+    {
+      title: "Other Opens",
+      color: 'rgba(66, 115, 173, 255)'
     },
-    { 
-        title:"Bounces",
-        color: 'rgba(71, 165, 178, 255)'
+    {
+      title: "Bounces",
+      color: 'rgba(71, 165, 178, 255)'
     },
-    { 
-        title:"Unsubscribes",
-        color: 'rgba(178, 221, 167, 255)'
+    {
+      title: "Unsubscribes",
+      color: 'rgba(178, 221, 167, 255)'
     }
-]
+  ]
 
   selectedOptions?.forEach(element => {
     const findOptions = chartOptions.find(ele => ele.title === element)
@@ -62,9 +62,9 @@ const LineChart = (props) => {
   optionsList.forEach((ele, index) => {
     const details = {
       label: ele.title,
-        data: dataList[index],
-        borderColor: ele.color,
-        borderWidth: 2
+      data: dataList[index],
+      borderColor: ele.color,
+      borderWidth: 2
     }
     datasets.push(details)
   })
@@ -80,7 +80,7 @@ const LineChart = (props) => {
       x: {
         beginAtZero: true,
         grid: {
-          display: false 
+          display: false
         },
         title: {
           display: true,
@@ -90,11 +90,11 @@ const LineChart = (props) => {
       y: {
         beginAtZero: true,
         grid: {
-          display: false 
+          display: false
         },
         title: {
           display: true,
-          text: 'Value' 
+          text: 'Value'
         }
       }
     },

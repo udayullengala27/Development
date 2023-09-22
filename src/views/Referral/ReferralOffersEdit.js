@@ -21,6 +21,7 @@ const ReferralOffersEdit = () => {
     const [referrerOffer2Min, setReferrerOffer2Min] = useState(0)
 
     const [status, setStatus] = useState('active')
+    const [isActive, setIsActive] = useState(false)
     console.log(status)
 
     const handleSubmit = () => {
@@ -39,11 +40,12 @@ const ReferralOffersEdit = () => {
             form_data.append('referree_value', referrerOffer2Value)
             form_data.append('referree_type', referrerOffer2Type)
             form_data.append('referree_minimum', referrerOffer2Min)
+            form_data.append('is_active', isActive)
             form_data.append('action', "EDIT")
             form_data.append('offer_id', offerId)
 
             const statusActive = document.getElementById('statusactive').checked
-            form_data.append('status', statusActive ? true : false)
+            form_data.append('status', statusActive)
 
             fetch(`https://api.xircles.in/referral/referralpoints/`, {
                 method: "POST",
@@ -88,7 +90,7 @@ const ReferralOffersEdit = () => {
         })
             .then((resp) => {
                 if (!resp.ok) {
-                    const filteredList = offers?.data.filter(ele => ele.id == offerId)
+                    const filteredList = offers?.data.filter(ele => String(ele.id) === offerId)
 
                     setReferrerOffer1Min(filteredList[0]?.referrer_minimum)
                     setReferrerOffer1Type(filteredList[0]?.referrer_type)
@@ -101,7 +103,7 @@ const ReferralOffersEdit = () => {
                 return resp.json()
             })
             .then((data) => {
-                const filteredList = data?.data.filter(ele => ele.id == offerId)
+                const filteredList = data?.data.filter(ele => String(ele.id) === offerId)
 
                 setReferrerOffer1Min(filteredList[0]?.referrer_minimum)
                 setReferrerOffer1Type(filteredList[0]?.referrer_type)
@@ -109,6 +111,7 @@ const ReferralOffersEdit = () => {
                 setReferrerOffer2Min(filteredList[0]?.referree_minimum)
                 setReferrerOffer2Type(filteredList[0]?.referree_type)
                 setReferrerOffer2Value(filteredList[0]?.referree_value)
+                setIsActive(filteredList[0]?.is_active)
 
                 setOffersList(data)
                 console.log("offerlist", data)
@@ -119,7 +122,7 @@ const ReferralOffersEdit = () => {
             })
     }, [offerId])
 
-
+    console.log()
 
     return (
         <>
@@ -134,8 +137,6 @@ const ReferralOffersEdit = () => {
 
                         <h3 className=' fw-bolder mb-1'>Referral</h3>
 
-
-
                         <Row>
                             <Col md={6} className='p-0'>
                                 <Card style={{ overflow: 'hidden' }} className='mb-3 ms-2'>
@@ -145,11 +146,11 @@ const ReferralOffersEdit = () => {
                                             <p>{errorMsg1}</p>
                                         </div>
                                         <form className="d-flex row mx-1">
-                                            <div className="col-4 mb-2">
+                                            <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                                                 <h5 >Value</h5>
                                                 <input type="number" className="form-control" min={1} value={referrerOffer1Value || 0} onChange={(e) => setReferrerOffer1Value(e.target.value)} />
                                             </div>
-                                            <div className="col-4">
+                                            <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                                                 <h5>Offer Type</h5>
                                                 <div className="d-flex align-items-center">
                                                     <select className="form-select m-0" onChange={(e) => setReferrerOffer1Type(e.target.value)}>
@@ -158,7 +159,7 @@ const ReferralOffersEdit = () => {
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div className="col-4 mb-2">
+                                            <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                                                 <h5 >Minimum</h5>
                                                 <input type="number" className="form-control" min={1} value={referrerOffer1Min || 0} onChange={(e) => setReferrerOffer1Min(e.target.value)} />
                                             </div>
@@ -175,11 +176,11 @@ const ReferralOffersEdit = () => {
                                             <p>{errorMsg2}</p>
                                         </div>
                                         <form className="d-flex row mx-1">
-                                            <div className="col-4 mb-2">
+                                            <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                                                 <h5 >Value</h5>
                                                 <input type="number" className="form-control" min={1} value={referrerOffer2Value || 0} onChange={(e) => setReferrerOffer2Value(e.target.value)} />
                                             </div>
-                                            <div className="col-4">
+                                            <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                                                 <h5>Offer Type</h5>
                                                 <div className="d-flex align-items-center">
                                                     <select className="form-select m-0" onChange={(e) => setReferrerOffer2Type(e.target.value)}>
@@ -188,7 +189,7 @@ const ReferralOffersEdit = () => {
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div className="col-4 mb-2">
+                                            <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                                                 <h5 >Minimum</h5>
                                                 <input type="number" className="form-control" min={1} value={referrerOffer2Min || 0} onChange={(e) => setReferrerOffer2Min(e.target.value)} />
                                             </div>
@@ -198,7 +199,7 @@ const ReferralOffersEdit = () => {
                             </Col>
                         </Row>
 
-                        <Card className=' w-25'>
+                        <Card style={{ maxWidth: "300px" }}>
                             <CardBody>
                                 <h3 className='mb-1'>Status</h3>
                                 <div className=' d-flex gap-2'>

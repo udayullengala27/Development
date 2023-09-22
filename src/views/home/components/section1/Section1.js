@@ -1,22 +1,24 @@
 import React from 'react'
 import image1 from "@src/assets/images/image 1.png"
+import "./section1.css"
 
 const Section1 = () => {
   return (
-    <div className='d-flex justify-content-center align-items-center' style={{ height: "100vh" }}>
-
-      <div className=' d-flex justify-content-center align-items-center gap-5'>
-        <div className='d-flex justify-content-end' style={{ width: "40%" }}>
-          <img src={image1} alt="image1" style={{ width: "350px" }} />
-        </div>
-        <div className=' p-2' style={{ width: "40%" }}>
-          <h5 className=' fw-bolder mb-1 text-black'>THE STATEMENT</h5>
-          <h1 className=' mb-1 text-black' style={{ width: "300px", fontWeight: "900", lineHeight: "1.5" }}>We're On A Mission To Help Businesses Grow</h1>
-          <h3 className=' mb-1' style={{ color: "#F6CB45" }}>Reduce Bounce Rates</h3>
-          <p className=' mb-1 text-black' style={{ width: "300px", lineHeight: "1.5" }}>H3 with line spacing - Lorem ipsum dolor sit H3 with line spacing - Lorem ipsum dolor sit</p>
-          <button className='btn btn-primary'>Learn more about security</button>
+    <div className='d-flex flex-wrap justify-content-center align-items-center mb-4 ' style={{ minHeight: "80vh" }}>
+      {/* <div className=' d-flex flex-wrap justify-content-center align-items-center gap-5'> */}
+      <div className='d-flex justify-content-center me-2 sect1Card' >
+        <img src={image1} alt="image1" />
+      </div>
+      <div className='ms-2 p-2 d-flex justify-content-center sect1Card' >
+        <div className='w-75'>
+          <h5 className=' fw-bolder mb-1 text-black'>SUPERLEADZ</h5>
+          <h1 className='h1Heading mb-1 text-black' style={{ lineHeight: "1.5" }}>Gain High-Quality Leads & Convert With Ease</h1>
+          <h3 className=' mb-1' style={{ color: "#F6CB45" }}>Reduce Drop-Offs</h3>
+          <p className=' fs-5 mb-1 text-black' style={{ width: "300px", lineHeight: "1.5" }}>Optimize your website sales funnel. Gain qualified leads & personalize shopper journeys. Serve instant incentives for faster conversions.</p>
+          <button className='btn btn-primary'>Learn more about SuperLeadz</button>
         </div>
       </div>
+      {/* </div> */}
     </div>
   )
 }

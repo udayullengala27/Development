@@ -18,14 +18,14 @@ const AreaChart = () => {
       {
         label: 'Area',
         data: [4000, 2500, 1700, 1300, 1000, 800, 700],
-        backgroundColor: createGradient(), 
-        borderColor: 'rgba(70, 141, 224, 1)', 
+        backgroundColor: createGradient(),
+        borderColor: 'rgba(70, 141, 224, 1)',
         borderWidth: 2,
         fill: 'start',
-        tension: 0.4 
+        tension: 0.4
       }
     ]
-  } 
+  }
 
   const options = {
     maintainAspectRatio: false,
@@ -55,14 +55,14 @@ const AreaChart = () => {
         radius: 0 // Remove circles at intersection points
       }
     }
-  } 
+  }
 
   return (
-    <div className=' mt-2' style={{height: "300px"}}>
+    <div className=' mt-2' style={{ height: "300px" }}>
       <Line data={data} options={options} />
     </div>
-  ) 
-} 
+  )
+}
 
-export default AreaChart 
+export default AreaChart
 

@@ -8,8 +8,8 @@ import { FaTwitterSquare } from "react-icons/fa"
 const Footer = () => {
     return (
         <>
-            <div className='d-flex justify-content-evenly ' style={{ padding: "20px 50px 100px 50px" }}>
-                <div>
+            <div className='d-flex flex-wrap justify-content-evenly gap-1 mx-2' style={{ padding: "20px 50px 100px 50px" }}>
+                <div className="mt-3" style={{ width: "220px" }}>
                     <img className='mb-1' src={logo} alt="logo-image" width={130} />
                     <div className='d-flex justify-content-center align-items-center gap-2'>
                         <a href="" className=' text-decoration-none' style={{ color: "rgba(77,77,77,255)" }}>
@@ -26,11 +26,11 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div>
+                <div className="mt-3" style={{ width: "220px" }}>
                     <h5 className=' fw-bolder mb-2'>Newsletter</h5>
                     <input type="email" className='form-control' name="email" placeholder='Enter your email' />
                 </div>
-                <div>
+                <div className="mt-3" style={{ width: "220px" }}>
                     <h5 className=' fw-bolder mb-2'>Products</h5>
                     <ul className=' list-unstyled'>
                         <li className='mb-1'>About us</li>
@@ -38,7 +38,7 @@ const Footer = () => {
                         <li className='mb-1'>Link</li>
                     </ul>
                 </div>
-                <div>
+                <div className="mt-3" style={{ width: "220px" }}>
                     <h5 className=' fw-bolder mb-2'>Resources</h5>
                     <ul className=' list-unstyled'>
                         <li className='mb-1'>Success stories</li>
@@ -46,7 +46,7 @@ const Footer = () => {
                         <li className='mb-1'>FAQ</li>
                     </ul>
                 </div>
-                <div>
+                <div className="mt-3" style={{ width: "220px" }}>
                     <h5 className=' fw-bolder mb-2'>Company</h5>
                     <ul className=' list-unstyled'>
                         <li className='mb-1'>About us</li>
@@ -56,9 +56,8 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <hr className='w-75 m-auto' />
             <div style={{ padding: "50px 50px 100px 100px" }}>
-                <ul className=' d-inline-flex gap-3 list-unstyled'>
+                <ul className=' d-inline-flex flex-wrap gap-3 list-unstyled'>
                     <li className=' fw-bolder'>Terms & Conditions</li>
                     <li className=' fw-bolder'>Privacy policy</li>
                     <li className=' fw-bolder'>Cookies policy</li>

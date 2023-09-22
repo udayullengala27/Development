@@ -22,6 +22,7 @@ const Home = () => {
       <Section5 />
       <Section6 />
       <Section7 />
+      <hr className='w-75 m-auto' />
       <Footer />
     </div>
   )

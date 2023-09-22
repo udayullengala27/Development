@@ -37,7 +37,7 @@ const ReferralOffers = () => {
       form_data.append('referree_minimum', referrerOffer2Min)
 
       const statusActive = document.getElementById('statusactive').checked
-      form_data.append('status', statusActive ? true : false)
+      form_data.append('status', statusActive)
 
       form_data.append('action', "CREATE")
 
@@ -90,12 +90,12 @@ const ReferralOffers = () => {
                 <h3 className='ms-1'>Referrer Offer</h3>
                 <p>{errorMsg1}</p>
               </div>
-              <form className="d-flex row mx-1">
-                <div className="col-4 mb-2">
+              <form className="d-flex flex-wrap row mx-1">
+                <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                   <h5 >Value</h5>
                   <input type="number" className="form-control" min={1} value={referrerOffer1Value} onChange={(e) => setReferrerOffer1Value(e.target.value)} />
                 </div>
-                <div className="col-4">
+                <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                   <h5>Offer Type</h5>
                   <div className="d-flex align-items-center">
                     <select className="form-select m-0" onChange={(e) => setReferrerOffer1Type(e.target.value)}>
@@ -104,7 +104,7 @@ const ReferralOffers = () => {
                     </select>
                   </div>
                 </div>
-                <div className="col-4 mb-2">
+                <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                   <h5 >Minimum</h5>
                   <input type="number" className="form-control" min={1} value={referrerOffer1Min} onChange={(e) => setReferrerOffer1Min(e.target.value)} />
                 </div>
@@ -120,12 +120,12 @@ const ReferralOffers = () => {
                 <h3 className='ms-1'>Referrer Offer</h3>
                 <p>{errorMsg2}</p>
               </div>
-              <form className="d-flex row mx-1">
-                <div className="col-4 mb-2">
+              <form className="d-flex flex-wrap row mx-1">
+                <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                   <h5 >Value</h5>
                   <input type="number" className="form-control" min={1} value={referrerOffer2Value} onChange={(e) => setReferrerOffer2Value(e.target.value)} />
                 </div>
-                <div className="col-4">
+                <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                   <h5>Offer Type</h5>
                   <div className="d-flex align-items-center">
                     <select className="form-select m-0" onChange={(e) => setReferrerOffer2Type(e.target.value)}>
@@ -134,7 +134,7 @@ const ReferralOffers = () => {
                     </select>
                   </div>
                 </div>
-                <div className="col-4 mb-2">
+                <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
                   <h5 >Minimum</h5>
                   <input type="number" className="form-control" min={1} value={referrerOffer2Min} onChange={(e) => setReferrerOffer2Min(e.target.value)} />
                 </div>
@@ -167,7 +167,7 @@ const ReferralOffers = () => {
         </Col> */}
       </Row>
 
-      <Card className=' w-25'>
+      <Card style={{ maxWidth: "300px" }}>
         <CardBody>
           <h3 className='mb-1'>Status</h3>
           <div className=' d-flex gap-2'>

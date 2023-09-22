@@ -1,25 +1,25 @@
-  import { useState } from 'react'
-    import { Col, Row, Card, CardBody, InputGroup, ButtonDropdown, Button, DropdownToggle, DropdownMenu, DropdownItem, Input } from 'reactstrap'
-    import {AiFillStar} from "react-icons/ai"
-    import BarChart from './BarChart'
-    import "./Analytics.css"
+import { useState } from 'react'
+import { Col, Row, Card, CardBody, InputGroup, ButtonDropdown, Button, DropdownToggle, DropdownMenu, DropdownItem, Input } from 'reactstrap'
+import { AiFillStar } from "react-icons/ai"
+import BarChart from './BarChart'
+import "./Analytics.css"
 import DoughnutChart from './DoughnutChart'
 
-    const Analytics = () => {
-        const [rateOption, setRateOption] = useState('All ')
-        const rateOptions = ['5 ', '4 ', '3 ', '2 ', '1 ']
+const Analytics = () => {
+    const [rateOption, setRateOption] = useState('All ')
+    const rateOptions = ['5 ', '4 ', '3 ', '2 ', '1 ']
 
-        const [continentOption, setContinentOption] = useState('AllContinents')
-        const continentOptions = ["Africa", "Antarctica", "Asia", "Australia", "Europe", "NorthAmerica", "SouthAmerica"]
+    const [continentOption, setContinentOption] = useState('AllContinents')
+    const continentOptions = ["Africa", "Antarctica", "Asia", "Australia", "Europe", "NorthAmerica", "SouthAmerica"]
 
-        const [startMonth, setStartMonth] = useState('0')
-        const [endMonth, setEndMonth] = useState('11')
-        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const [startMonth, setStartMonth] = useState('0')
+    const [endMonth, setEndMonth] = useState('11')
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-        const [durationOption, setDurationOption] = useState('1mo 0days')
-        const durationOptions = ["1mo 0 days", "1mo 3 days", "1mo 15 days", "2mo 0 days", "2mo 10 days"]
+    const [durationOption, setDurationOption] = useState('1mo 0days')
+    const durationOptions = ["1mo 0 days", "1mo 3 days", "1mo 15 days", "2mo 0 days", "2mo 10 days"]
 
-        console.log(rateOption, rateOptions)
+    console.log(rateOption, rateOptions)
 
     return (
         <>
@@ -30,24 +30,24 @@ import DoughnutChart from './DoughnutChart'
             </Card>
             <Row>
                 <Col md="6">
-                    <Card style={{minHeight: "330px"}}>
+                    <Card style={{ minHeight: "330px" }}>
                         <CardBody>
                             <div className=' d-flex justify-content-between align-items-center mb-1'>
                                 <p className=' fw-bold '>Average</p>
                                 <div>
                                     <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate"
-                                    type="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                        { rateOption + "star" }
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        {`${rateOption} star`}
                                     </button>
                                     <ul className="dropdown-menu">
-                                    <li className=" dropdown-item cursor-pointer" onClick={ () => setRateOption("All ")}> All star</li>
+                                        <li className=" dropdown-item cursor-pointer" onClick={() => setRateOption("All ")}> All star</li>
                                         {
                                             rateOptions.map(ele => {
                                                 return (
-                                                    <li key = { ele } className=" dropdown-item cursor-pointer" onClick={ () => setRateOption(ele)}>
-                                                        { ele + "star" }
+                                                    <li key={ele} className=" dropdown-item cursor-pointer" onClick={() => setRateOption(ele)}>
+                                                        {`${ele} star`}
                                                     </li>
                                                 )
                                             })
@@ -61,13 +61,12 @@ import DoughnutChart from './DoughnutChart'
                                     {
                                         rateOptions.map((ele, index) => {
                                             return (
-                                                <li className= {`d-flex justify-content-evenly align-items-center mb-1 ${
-                                                                    (rateOption === ele || rateOption === 'All ') ? 'opacity-100' : 'opacity-25'
-                                                                }`}
+                                                <li className={`d-flex justify-content-evenly align-items-center mb-1 ${(rateOption === ele || rateOption === 'All ') ? 'opacity-100' : 'opacity-25'
+                                                    }`}
                                                 >
-                                                    <AiFillStar style={{color: "yellow", fontSize:"20px"}}/>
-                                                    <span className=' fw-bold fs-5'>{ rateOptions.length - index }</span>
-                                                    <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)"}}></span>
+                                                    <AiFillStar style={{ color: "yellow", fontSize: "20px" }} />
+                                                    <span className=' fw-bold fs-5'>{rateOptions.length - index}</span>
+                                                    <span className=' d-block w-75 rounded-pill' style={{ height: "5px", background: "rgb(219, 219, 219)" }}></span>
                                                     0%
                                                 </li>
                                             )
@@ -83,16 +82,16 @@ import DoughnutChart from './DoughnutChart'
                     <Card>
                         <CardBody>
                             <div className=' d-flex justify-content-between align-items-center'>
-                                <p className=' fw-bold '>Top Countries in { continentOption }</p>
+                                <p className=' fw-bold '>Top Countries in {continentOption}</p>
                                 {/* <p>All time</p> */}
                                 <div>
-                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ continentOption }</button>
+                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{continentOption}</button>
                                     <ul className="dropdown-menu">
-                                    <li className=" dropdown-item cursor-pointer" onClick={ () => setContinentOption("AllContinents")}>All Continents</li>
+                                        <li className=" dropdown-item cursor-pointer" onClick={() => setContinentOption("AllContinents")}>All Continents</li>
                                         {
                                             continentOptions.map(ele => {
                                                 return (
-                                                    <li key= { ele} className=" dropdown-item cursor-pointer" onClick={ () => setContinentOption(ele)}>{ ele }</li>
+                                                    <li key={ele} className=" dropdown-item cursor-pointer" onClick={() => setContinentOption(ele)}>{ele}</li>
                                                 )
                                             })
                                         }
@@ -100,7 +99,7 @@ import DoughnutChart from './DoughnutChart'
                                 </div>
                             </div>
 
-                            <DoughnutChart continent={continentOption.toLowerCase()}/>
+                            <DoughnutChart continent={continentOption.toLowerCase()} />
 
                             {/* <div className=' d-flex justify-content-evenly align-items-center mb-1 '>
                                 <div className={ `topCountryOuterDiv rounded-circle ${continentOption.toLowerCase()}` }>
@@ -123,28 +122,28 @@ import DoughnutChart from './DoughnutChart'
                         <h4>Analytics</h4>
                         <div className="months">
                             <div>
-                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ months[parseInt(startMonth)] }</button>
-                                    <ul className="dropdown-menu">
-                                        {
-                                            months.map((ele, index) => {
-                                                return (
-                                                    <li key={ index } className=" dropdown-item cursor-pointer" onClick={ () => setStartMonth(index)}>{ ele }</li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
+                                <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{months[parseInt(startMonth)]}</button>
+                                <ul className="dropdown-menu">
+                                    {
+                                        months.map((ele, index) => {
+                                            return (
+                                                <li key={index} className=" dropdown-item cursor-pointer" onClick={() => setStartMonth(index)}>{ele}</li>
+                                            )
+                                        })
+                                    }
+                                </ul>
                             </div>
                             <div>
-                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ months[parseInt(endMonth)] }</button>
-                                    <ul className="dropdown-menu">
-                                        {
-                                            months.map((ele, index) => {
-                                                return (
-                                                    <li key={ index } className=" dropdown-item cursor-pointer" onClick={ () => setEndMonth(index)}>{ ele }</li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
+                                <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{months[parseInt(endMonth)]}</button>
+                                <ul className="dropdown-menu">
+                                    {
+                                        months.map((ele, index) => {
+                                            return (
+                                                <li key={index} className=" dropdown-item cursor-pointer" onClick={() => setEndMonth(index)}>{ele}</li>
+                                            )
+                                        })
+                                    }
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -153,7 +152,7 @@ import DoughnutChart from './DoughnutChart'
 
                     <div>
 
-                        <BarChart  startMonth = {startMonth} endMonth= {endMonth} />
+                        <BarChart startMonth={startMonth} endMonth={endMonth} />
                     </div>
 
                 </CardBody>
@@ -225,35 +224,35 @@ import DoughnutChart from './DoughnutChart'
 
             <Row>
                 <Col xl="3" md="6">
-                    <Card style={{ minHeight: "250px"}}>
+                    <Card style={{ minHeight: "250px" }}>
                         <CardBody>
                             <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Best Rated Products</span></p>
                         </CardBody>
                     </Card>
                 </Col>
-                <Col xl="3"  md="6">
-                    <Card style={{ minHeight: "250px"}}>
+                <Col xl="3" md="6">
+                    <Card style={{ minHeight: "250px" }}>
                         <CardBody>
                             <div className='d-flex flex-wrap  justify-content-between align-items-center '>
                                 <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Avg. Duration from Product Purchase to Review Posted</span></p>
                                 <div>
-                                        <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ durationOption }</button>
-                                        <ul className="dropdown-menu">
-                                            {
-                                                durationOptions.map((ele, index) => {
-                                                    return (
-                                                        <li key={ index } className=" dropdown-item cursor-pointer" onClick={ () => setDurationOption(ele)}>{ ele }</li>
-                                                    )
-                                                })
-                                            }
-                                        </ul>
+                                    <button className="btn btn-outline-secondary fs-6 dropdown-toggle no-border-rate" type="button" data-bs-toggle="dropdown" aria-expanded="false">{durationOption}</button>
+                                    <ul className="dropdown-menu">
+                                        {
+                                            durationOptions.map((ele, index) => {
+                                                return (
+                                                    <li key={index} className=" dropdown-item cursor-pointer" onClick={() => setDurationOption(ele)}>{ele}</li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
                                 </div>
                             </div>
                         </CardBody>
                     </Card>
                 </Col>
                 <Col xl="6">
-                    <Card style={{ minHeight: "250px"}}>
+                    <Card style={{ minHeight: "250px" }}>
                         <CardBody>
                             <p className=' fw-bold  mb-1'><span className=' fw-bolder'>Request Email Analysis -</span> Sent, Open Clicked</p>
                             <table class="table">
@@ -287,13 +286,13 @@ import DoughnutChart from './DoughnutChart'
                 </Col>
             </Row>
 
-            <Row style={{ minHeight: "200px"}}>
+            <Row style={{ minHeight: "200px" }}>
 
             </Row>
 
 
         </>
     )
-    }
+}
 
-    export default Analytics
+export default Analytics

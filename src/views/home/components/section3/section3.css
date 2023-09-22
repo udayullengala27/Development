@@ -1,0 +1,29 @@
+.sect3Card {
+    width: 35%;
+}
+
+.sect3Card:nth-child(1) p, .sect3Card:nth-child(1) h1 {
+    width: 75%;
+}
+
+.sect3MinCard {
+    width: 400px;
+}
+
+@media screen and (max-width: 900px) {
+    .sect3Card {
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    .sect3Card:nth-child(1) p, .sect3Card:nth-child(1) h1 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sect3MinCard {
+        width: 280px;
+        text-align: center;
+    }
+}
