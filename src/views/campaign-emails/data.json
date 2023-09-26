@@ -1,0 +1,25 @@
+[
+    {
+        "model": "integration.campaigns",
+        "pk": "a2874904-5da5-4d8f-a2bc-8fef24e7e9d1",
+        "fields": {
+            "user_id": "524dfd6b-8c99-437e-8541-6ac67f0ed7a7",
+            "shop": "http://bombayclub.myshopify.com/",
+            "app": "'superleadz",
+            "campaign_type": "Broadcast Campaign",
+            "campaign_name": "qwertyuiop",
+            "smart_send": false,
+            "domain": "SMTP",
+            "campaign_details": {
+                "send_to": "59e88d2f-ecd5-476b-a757-54f584fe5337",
+                "schedule": true,
+                "schedule_time": "10:50:00"
+            },
+            "subject": "Discount",
+            "preview_text": "Hellooo",
+            "template": "media/email.html",
+            "reply_to_address": true,
+            "event": "discount"
+        }
+    }
+]

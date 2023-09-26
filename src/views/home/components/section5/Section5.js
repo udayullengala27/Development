@@ -32,7 +32,7 @@ const Section5 = () => {
                     companyDetails.map((ele) => (
                         <Carousel.Item>
                             <div className=' position-relative ' style={{ padding: "180px 0" }}>
-                                <div className=' py-3 section5Content' style={{ background: "#F6CB4554.33%", paddingLeft: "110px", height: "400px" }}>
+                                <div className=' py-3 section5Content' style={{ background: "#F6CB4554.33%", height: "400px" }}>
                                     <p className=' fw-bold text-black'>THE TESTIMONIAL</p>
                                     <h3 className=' fw-bolder mb-2 text-black testimonialDesc' >
                                         {ele.desc}

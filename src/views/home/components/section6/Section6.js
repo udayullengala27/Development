@@ -21,10 +21,10 @@ const Section6 = () => {
     window.addEventListener("resize", () => {
         if (window.innerWidth > 768) {
             setNumOfPages(6)
-        } else if (window.innerWidth <= 768) {
-            setNumOfPages(4)
         } else if (window.innerWidth <= 576) {
             setNumOfPages(2)
+        } else if (window.innerWidth <= 768) {
+            setNumOfPages(4)
         }
     })
     return (
@@ -32,32 +32,27 @@ const Section6 = () => {
             <h1 className=' text-center fw-bolder mb-5'>Join A Global Network <br />Of Companies</h1>
 
             <div className='SwipePad'>
-                <div className='container'>
-                    <>
-                        <Swiper
-                            spaceBetween={30}
-                            slidesPerView={numOfPages}
-                            navigation
-                            pagination={{ clickable: true }}
-                            loop={true}
-                            autoplay={{
-                                delay: 3000,
-                                disableOnInteraction: false
-                            }}
-                        >
+                <Swiper
+                    spaceBetween={30}
+                    slidesPerView={numOfPages}
+                    navigation
+                    pagination={{ clickable: true }}
+                    loop={true}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false
+                    }}
+                >
 
-                            <SwiperSlide ><img className='joinCompanyLogo' src={bewakoofLogo} /></SwiperSlide>
-                            <SwiperSlide><img className='joinCompanyLogo' src={cornitosLogo} /></SwiperSlide>
-                            <SwiperSlide><img className='joinCompanyLogo' src={designersClassLogo} /></SwiperSlide>
-                            <SwiperSlide> <img className='joinCompanyLogo' src={hammerLogo} /></SwiperSlide>
-                            <SwiperSlide><img className='joinCompanyLogo' src={kapivaLogo} /></SwiperSlide>
-                            <SwiperSlide> <img className='joinCompanyLogo' src={leafLogo} /></SwiperSlide>
-                            <SwiperSlide><img className='joinCompanyLogo' src={snitchBlackLogo} /></SwiperSlide>
-                            <SwiperSlide><img className='joinCompanyLogo' src={skullcandyLogo} /></SwiperSlide>
-                        </Swiper>
-
-                    </>
-                </div>
+                    <SwiperSlide ><img className='joinCompanyLogo' src={bewakoofLogo} /></SwiperSlide>
+                    <SwiperSlide><img className='joinCompanyLogo' src={cornitosLogo} /></SwiperSlide>
+                    <SwiperSlide><img className='joinCompanyLogo' src={designersClassLogo} /></SwiperSlide>
+                    <SwiperSlide> <img className='joinCompanyLogo' src={hammerLogo} /></SwiperSlide>
+                    <SwiperSlide><img className='joinCompanyLogo' src={kapivaLogo} /></SwiperSlide>
+                    <SwiperSlide> <img className='joinCompanyLogo' src={leafLogo} /></SwiperSlide>
+                    <SwiperSlide><img className='joinCompanyLogo' src={snitchBlackLogo} /></SwiperSlide>
+                    <SwiperSlide><img className='joinCompanyLogo' src={skullcandyLogo} /></SwiperSlide>
+                </Swiper>
             </div>
 
             {/* <div className=' d-flex flex-wrap justify-content-evenly align-items-center' style={{ margin: "100px 0" }}>

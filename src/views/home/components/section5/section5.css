@@ -2,10 +2,14 @@
     max-width: 600px;
 }
 
+.section5Content {
+    padding-left: 10%;
+}
+
 .profileImg {
     position: absolute;
     top: 100px;
-    right: 120px;
+    right: 10%;
 }
 
 .profileImg>img {
@@ -17,6 +21,16 @@
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: #535353;
+}
+
+@media screen and (min-width: 2000px) {
+    .section5Content {
+        padding-left: 15%;
+    }
+
+    .profileImg {
+        right: 20%;
+    }
 }
 
 @media screen and (max-width: 1200px) {
