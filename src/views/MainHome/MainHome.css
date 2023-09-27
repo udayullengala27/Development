@@ -15,6 +15,14 @@
     max-height: auto;
 }
 
+.mainTemplate {
+    overflow-x: scroll;
+}
+
+.mainTemplate::-webkit-scrollbar {
+    display: none;
+}
+
 @media screen and (max-width:1024px) {
     .mainHeading h2 {
         font-size: 1.9rem;

@@ -35,8 +35,8 @@ const MainHome = () => {
                             <h2 style={{ marginTop: "7px", color: "white", fontWeight: "500" }} >Celebrating 10 year of Canva</h2>
                         </Col>
                         <Col className='mainButton d-flex justify-content-end align-items-center'>
-                            <button type="button" className="btn btn-light text-light " style={{ marginRight: "10px", borderRadius: "3px", background:"transparent" }}>{button ? <GiResize /> : "Custom size"}</button>
-                            <button type="button" className="btn btn-light text-light" style={{ borderRadius: "3px", background:"transparent" }}>{button ? <BsCloudUpload /> : "Upload"}</button>
+                            <button type="button" className="btn btn-light text-light " style={{ marginRight: "10px", borderRadius: "3px", background: "transparent" }}>{button ? <GiResize /> : "Custom size"}</button>
+                            <button type="button" className="btn btn-light text-light" style={{ borderRadius: "3px", background: "transparent" }}>{button ? <BsCloudUpload /> : "Upload"}</button>
                         </Col>
                     </Row>
                     <Row className='mt-2'>
@@ -72,7 +72,23 @@ const MainHome = () => {
             </Row>
             <Row className='mb-1'>
                 <h3 className='fw-bolder mb-1 mt-1' style={{ fontSize: "20px" }}>Templates</h3>
-                <Col className='d-flex gap-1' style={{ flexWrap: "nowrap" }}>
+                <Col className=' mainTemplate d-flex gap-1' style={{ flexWrap: "nowrap" }}>
+                    <div className="main">
+                        <div className="bigImg">
+                            <img src={image2} alt="/" width={265} />
+                        </div>
+                        <div className="profileImg rounded-circle position-relative " style={{ bottom: "2.8rem", left: "7rem" }}>
+                            <Avatar name="Sahil Gupta" round={true} size='45' color='#d2b589' />
+                        </div>
+                    </div>
+                    <div className="main">
+                        <div className="bigImg">
+                            <img src={image2} alt="/" width={265} />
+                        </div>
+                        <div className="profileImg rounded-circle position-relative " style={{ bottom: "2.8rem", left: "7rem" }}>
+                            <Avatar name="Sahil Gupta" round={true} size='45' color='#d2b589' />
+                        </div>
+                    </div>
                     <div className="main">
                         <div className="bigImg">
                             <img src={image2} alt="/" width={265} />
