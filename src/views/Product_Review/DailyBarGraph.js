@@ -61,8 +61,8 @@ const DailyBarGraph = () => {
   data.datasets[0].barPercentage = 0.5
 
   return (
-    <div style={{ width: '19rem', height: '200px'}}>
-      <Bar data={data} width={100} height={65} options={chartOptions} />
+    <div style={{ width: '19rem', height: '120px'}}>
+      <Bar data={data} width={110} height={65} options={chartOptions} />
     </div>
   )
 }
