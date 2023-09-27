@@ -1,0 +1,92 @@
+.mainHeading h2 {
+    font-size: 2.5rem;
+    margin-left: 24rem;
+}
+
+.mainInput .input-group {
+    width: 50rem !important;
+    height: 2.7rem;
+    border-radius: 3px;
+}
+
+.images img {
+    max-width: 100%;
+    height: 17.5rem;
+    max-height: auto;
+}
+
+@media screen and (max-width:1024px) {
+    .mainHeading h2 {
+        font-size: 1.9rem;
+        margin-left: 19rem;
+    }
+}
+
+@media screen and (max-width:786px) {
+    .mainHeading h2 {
+        font-size: 23px;
+        margin-left: 11rem;
+    }
+
+    .mainInput .input-group {
+        width: "70%";
+    }
+
+    .homeIcons {
+        flex-wrap: nowrap;
+    }
+
+    .mainInfo InfoCard {
+        display: block;
+        width: 100%;
+    }
+
+    .homeIcons {
+        overflow-x: scroll;
+        padding-left: 12rem;
+    }
+
+    .images {
+        height: 250px;
+    }
+
+    .images img {
+        height: 18rem;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .mainButton {
+        display: none !important;
+    }
+
+    .mainHeading h2 {
+        display: none;
+    }
+
+    .mainInput {
+        width: "100%";
+    }
+
+    .mainStats StatsCard {
+        display: block;
+        width: 100%;
+    }
+
+    .images {
+        height: 185px;
+    }
+
+    .images img {
+        height: 13rem;
+    }
+
+    .homeIcons {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 27rem;
+        /* width: 45rem; */
+        white-space: nowrap;
+
+    }
+}

@@ -26,8 +26,8 @@ const HomeDonughnutChart = () => {
         <div>
         <Chart
             type='donut'
-            width={300}
-            height={180}
+            width={240}
+            height={175}
             series={[50, 50, 40, 60, 6, 25]}
             options={chartData}
             />

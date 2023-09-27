@@ -11,7 +11,7 @@ import img from './product-9.png'
 import { FaStar } from 'react-icons/fa'
 
 // ** Store & Actions
-// import { store } from '@store/store'
+import { store } from '@store/store'
 // import { getUser, deleteUser } from '../store'
 
 // ** Icons Imports
@@ -27,7 +27,7 @@ const statusObj = {
 
 const renderClient = row => {
     if (row.avatar) {
-        return <Avatar alt="Gisela Leppard" src="/static/images/avatar/1.jpg" width='32' height='32' />    
+        return <Avatar alt="Gisela Leppard" src="/static/images/avatar/1.jpg" width='32' height='32' />
         // return <img src={AvatarImg} className='me-1' width='32' height='32'/>
     } else {
         return (
@@ -41,7 +41,7 @@ const renderClient = row => {
     }
 }
 
-export const data = [{ name: 'Gisela Leppard', product: 'Air Jordan', productDesc:'Air Jordan is a line of basketball shoes produced by Nike', status: 'published', reviewer: '909090909', email: 'gleppard8@yandex.ru', date: "27 Apr 2022", review:"Ut mauris", reviewdesc:"Fusce consequat. Nulla nisl. Nunc nisl." }]
+export const data = [{ name: 'Gisela Leppard', product: 'Air Jordan', productDesc: 'Air Jordan is a line of basketball shoes produced by Nike', status: 'published', reviewer: '909090909', email: 'gleppard8@yandex.ru', date: "27 Apr 2022", review: "Ut mauris", reviewdesc: "Fusce consequat. Nulla nisl. Nunc nisl." }]
 
 export const Column = [
     {
@@ -52,14 +52,14 @@ export const Column = [
         selector: row => row.product,
         cell: row => (
             <div className='d-flex justify-content-left align-items-center mt-1'>
-                <img src={ img } alt="" style={{width:'15%', height:"auto"}} />
-                <div className='d-flex flex-column' style={{marginLeft:"7px"}}>
+                <img src={img} alt="" style={{ width: '15%', height: "auto" }} />
+                <div className='d-flex flex-column' style={{ marginLeft: "7px" }}>
                     <Link
                         to={`/apps/user/view/${row.id}`}
                         className='user_name text-truncate text-body'
                         onClick={() => store.dispatch(getUser(row.id))}
                     >
-                        <span className='fw-medium' style={{fontSize:'14px'}}>{row.product}</span>
+                        <span className='fw-medium' style={{ fontSize: '14px' }}>{row.product}</span>
                     </Link>
                     <small className='text-muted mb-0 w-75'>{row.productDesc}</small>
                 </div>
@@ -81,7 +81,7 @@ export const Column = [
                         className='user_name text-truncate text-body'
                         onClick={() => store.dispatch(getUser(row.id))}
                     >
-                        <span className='fw-medium' style={{fontSize:'14px', color:"#7367f0"}}>{row.name}</span>
+                        <span className='fw-medium' style={{ fontSize: '14px', color: "#7367f0" }}>{row.name}</span>
                     </Link>
                     <small className='text-truncate text-muted mb-0'>{row.email}</small>
                 </div>
@@ -96,14 +96,14 @@ export const Column = [
         selector: row => row.review,
         cell: row => (
             <div className='d-flex flex-column mt-1'>
-                <div style={{marginBottom:'5px'}}>
-                <FaStar size={21} color='#ff9f43'/>
-                <FaStar size={21} color='#ff9f43'/>
-                <FaStar size={21} color='#4b465c33'/>
-                <FaStar size={21} color='#4b465c33'/>
-                <FaStar size={21} color='#4b465c33'/>
+                <div style={{ marginBottom: '5px' }}>
+                    <FaStar size={21} color='#ff9f43' />
+                    <FaStar size={21} color='#ff9f43' />
+                    <FaStar size={21} color='#4b465c33' />
+                    <FaStar size={21} color='#4b465c33' />
+                    <FaStar size={21} color='#4b465c33' />
                 </div>
-                <p className="h6" style={{marginBottom:'5px', fontSize:"14px"}}>{row.review}</p>
+                <p className="h6" style={{ marginBottom: '5px', fontSize: "14px" }}>{row.review}</p>
                 <small >{row.reviewdesc}</small>
             </div>
         )
@@ -126,7 +126,7 @@ export const Column = [
         sortField: 'status',
         selector: row => row.status,
         cell: row => (
-            <Badge className='text-capitalize' color={statusObj[row.status]} style={{ padding: '7px'}}>
+            <Badge className='text-capitalize' color={statusObj[row.status]} style={{ padding: '7px' }}>
                 {row.status}
             </Badge>
         )

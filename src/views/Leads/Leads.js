@@ -1,4 +1,3 @@
-
 import { Col, Row, Card, CardBody } from 'reactstrap'
 import DataTableWithButtons from '../tables/data-tables/basic/TableMultilingual'
 import StatsCard from '../ui-element/Static'
