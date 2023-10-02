@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+
+@font-face {
+    font-family: Colaborate;
+    src: url("../../../public/fonts/Colaborate/ColabReg.otf");
+}
+
+@font-face {
+    font-family: Colaborate Med;
+    src: url("../../../public/fonts/Colaborate/ColabMed.otf");
+}
+
+@font-face {
+    font-family: Colaborat Lig;
+    src: url("../../../public/fonts/Colaborate/ColabLig.otf");
+}
+
+.HomePage {
+    font-family: Colaborate;
+}

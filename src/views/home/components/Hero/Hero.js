@@ -5,10 +5,10 @@ import "./hero.css"
 
 const Hero = () => {
   return (
-    <div className='' style={{ minHeight: "80vh" }}>
+    <div className='' style={{ minHeight: "500px" }}>
       <Carousel className=' pt-5'>
         <Carousel.Item>
-          <div className=' hero  ' style={{ paddingTop: "8%" }}>
+          <div className=' hero  ' style={{ paddingTop: "5%" }}>
             <h1 id='heroHeading' className='h1Heading'>
               FROM FIRST VISIT TO FOREVER LOYAL.
             </h1>
@@ -21,7 +21,7 @@ const Hero = () => {
         </Carousel.Item>
 
         <Carousel.Item>
-          <div className=' hero ' style={{ paddingTop: "5%", paddingBottom: "5%" }}>
+          <div className=' hero ' style={{ paddingTop: "5%", paddingBottom: "5% " }}>
             <h1 id='heroHeading' className='h1Heading'>
               XIRCLS
             </h1>
@@ -34,7 +34,7 @@ const Hero = () => {
         </Carousel.Item>
 
         <Carousel.Item>
-          <div className=' hero ' style={{ paddingTop: "8%" }}>
+          <div className=' hero ' style={{ paddingTop: "5%" }}>
             <h1 id='heroHeading' className='h1Heading'>
               BREAK FREE FROM AGGREGATORS.
             </h1>

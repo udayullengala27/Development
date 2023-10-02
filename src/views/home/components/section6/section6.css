@@ -28,6 +28,36 @@
     display: none;
 }
 
+/* .marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.d-flex {
+  margin-right: 20px;
+}
+
+.joinCompanyLogo {
+  width: 100px; 
+  height: 100px;
+  border-radius: 50%; 
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+
 @media (max-width: 768px) {
     .joinCompanyLogo {
         height: 100px !important;

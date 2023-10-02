@@ -47,10 +47,10 @@ const ReferralOffersEdit = () => {
             const statusActive = document.getElementById('statusactive').checked
             form_data.append('status', statusActive)
 
-            fetch(`https://api.xircles.in/referral/referralpoints/`, {
+            fetch(`https://api.xircls.com/referral/referralpoints/`, {
                 method: "POST",
                 headers: {
-                    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0NzAwNzE5LCJpYXQiOjE2OTQ2NzA3MTksImp0aSI6ImM1NzA1NmI5ODQxOTQzZTE5YTg3YzUxYTRjMjBmMWIwIiwidXNlcl9pZCI6MTg3MTc2fQ.mJN0H5KzuCQnna6ZIX4NovPVs7tfhR5DI5QpvjNQXi0",
+                    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MDA3ODIyLCJpYXQiOjE2OTU5Nzc4MjIsImp0aSI6IjU1ZWVjNzI0Mzc4MDQwMWRhNzY1MDRlMjgwYzFkNGMwIiwidXNlcl9pZCI6MzA3ODE3fQ.bA0s6Bpf7BQbPQlTgCqQZyav0TGcrDp9yfk8n413w_Y",
                     "Api-key": "Fv14sMRkz8uYqd3VMbKy5U+7h6QE4Rcb7MeG1d/PoXU="
                 },
                 body: form_data
@@ -84,7 +84,7 @@ const ReferralOffersEdit = () => {
         fetch(`https://api.xircles.in/referral/get_offers/`, {
             method: "GET",
             headers: {
-                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0NzAwNzE5LCJpYXQiOjE2OTQ2NzA3MTksImp0aSI6ImM1NzA1NmI5ODQxOTQzZTE5YTg3YzUxYTRjMjBmMWIwIiwidXNlcl9pZCI6MTg3MTc2fQ.mJN0H5KzuCQnna6ZIX4NovPVs7tfhR5DI5QpvjNQXi0",
+                Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MDA3ODIyLCJpYXQiOjE2OTU5Nzc4MjIsImp0aSI6IjU1ZWVjNzI0Mzc4MDQwMWRhNzY1MDRlMjgwYzFkNGMwIiwidXNlcl9pZCI6MzA3ODE3fQ.bA0s6Bpf7BQbPQlTgCqQZyav0TGcrDp9yfk8n413w_Y",
                 "Api-key": "Fv14sMRkz8uYqd3VMbKy5U+7h6QE4Rcb7MeG1d/PoXU="
             }
         })

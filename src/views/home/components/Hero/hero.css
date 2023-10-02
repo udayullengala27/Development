@@ -3,12 +3,14 @@
     text-align: center;
     margin: 0 auto;
     margin-bottom: 20px;
+
 }
 
 .h1Heading {
     color: black !important;
     font-size: 35px !important;
     font-weight: 900 !important;
+    line-height: 1.1 !important;
 }
 
 .hero {

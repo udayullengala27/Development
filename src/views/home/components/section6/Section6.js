@@ -5,6 +5,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/free-mode'
 import 'swiper/css/autoplay'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper'
 import './section6.css'
 
 import bewakoofLogo from "@src/assets/images/logo/bewakoof_logo.png"
@@ -30,7 +31,32 @@ const Section6 = () => {
     return (
         <div style={{ padding: "100px 0" }}>
             <h1 className=' text-center fw-bolder mb-5'>Join A Global Network <br />Of Companies</h1>
-
+            {/* <marquee behavior="scroll" direction="left" scrollamount="5">
+                <div className="d-flex justify-content-evenly align-items-center">
+                    <div ><img className='joinCompanyLogo' src={bewakoofLogo} /></div>
+                    <div><img className='joinCompanyLogo' src={cornitosLogo} /></div>
+                    <div><img className='joinCompanyLogo' src={designersClassLogo} /></div>
+                    <div> <img className='joinCompanyLogo' src={hammerLogo} /></div>
+                    <div><img className='joinCompanyLogo' src={kapivaLogo} /></div>
+                    <div> <img className='joinCompanyLogo' src={leafLogo} /></div>
+                    <div><img className='joinCompanyLogo' src={snitchBlackLogo} /></div>
+                    <div><img className='joinCompanyLogo' src={skullcandyLogo} /></div>
+                </div>
+            </marquee> */}
+            {/* <div className='marquee-container'>
+                <div className="marquee-content">
+                    <div className="d-flex justify-content-evenly align-items-center">
+                        <div ><img className='joinCompanyLogo' src={bewakoofLogo} /></div>
+                        <div><img className='joinCompanyLogo' src={cornitosLogo} /></div>
+                        <div><img className='joinCompanyLogo' src={designersClassLogo} /></div>
+                        <div> <img className='joinCompanyLogo' src={hammerLogo} /></div>
+                        <div><img className='joinCompanyLogo' src={kapivaLogo} /></div>
+                        <div> <img className='joinCompanyLogo' src={leafLogo} /></div>
+                        <div><img className='joinCompanyLogo' src={snitchBlackLogo} /></div>
+                        <div><img className='joinCompanyLogo' src={skullcandyLogo} /></div>
+                    </div>
+                </div>
+            </div> */}
             <div className='SwipePad'>
                 <Swiper
                     spaceBetween={30}
@@ -39,9 +65,10 @@ const Section6 = () => {
                     pagination={{ clickable: true }}
                     loop={true}
                     autoplay={{
-                        delay: 3000,
+                        delay: 1000,
                         disableOnInteraction: false
                     }}
+                    modules={[Autoplay]}
                 >
 
                     <SwiperSlide ><img className='joinCompanyLogo' src={bewakoofLogo} /></SwiperSlide>
