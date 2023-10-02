@@ -5,8 +5,7 @@ const Home = lazy(() => import('@src/views/home/Home'))
 const Recommendation = lazy(() => import('@src/views/recommendation/Recommendation'))
 const HomePageRecommendation = lazy(() => import('@src/views/HomePageRecommendation/HomePageRecommendation'))
 const MainHome = lazy(() => import('@src/views/MainHome/MainHome'))
-
-
+const Timeline = lazy(() => import("@src/views/TimeLine/Timeline"))
 const Customers_Routes = [
   {
     path: '/merchant/leads',
@@ -31,6 +30,10 @@ const Customers_Routes = [
   {
     path: '/merchant/mainhome',
     element: <MainHome/>
+  },
+  {
+    path: '/merchant/timeline',
+    element: <Timeline/>
   }
 ]
 

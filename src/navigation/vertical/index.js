@@ -45,5 +45,11 @@ export default [
     title: 'Main Home',
     icon: <User size={20} />,
     navLink: '/merchant/mainhome'
+  },
+  {
+    id: 'timeline',
+    title: 'Time Line',
+    icon: <User size={20} />,
+    navLink: '/merchant/timeline'
   }
 ]
