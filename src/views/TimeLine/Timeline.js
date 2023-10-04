@@ -6,7 +6,7 @@ const Timeline = () => {
     <>
       <Card>
         <CardBody>
-          <h4>Time Line</h4>
+          <h4>Timeline</h4>
         </CardBody>
       </Card>
       <TimeLineVerticals />

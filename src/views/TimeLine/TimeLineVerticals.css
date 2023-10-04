@@ -1,24 +1,30 @@
-.vertical-timeline-element-icon{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+.vertical-timeline-element-icon {
     box-shadow: none;
 }
+
 .vertical-timeline::before {
-    top: 5rem;
+    top: 2rem;
     width: 1px;
     background: #d8d6dc;
-    height: 85%;
+    height: 82%;
 }
-.vertical-timeline-element-content-arrow{
-    display:none ;
+
+.vertical-timeline-element-content-arrow {
+    display: none;
 }
-.vertical-timeline-element-content{
+
+.vertical-timeline-element-content {
     box-shadow: none;
     /* width: 50%; */
 }
-.vertical-timeline{
-    margin:0;
+
+.vertical-timeline {
+    margin: 0;
     max-width: 1385px;
 }
-.vertical-timeline-element-icon svg{
+
+.vertical-timeline-element-icon svg {
     margin-left: -13px;
 }
 
@@ -28,8 +34,25 @@
 } */
 
 @media only screen and (min-width:1170px) {
-    .vertical-timeline{
+    .vertical-timeline {
         width: 100% !important;
     }
-    
 }
+
+@media screen and (max-width:426px){
+    .vertical-timeline::before{
+        height:80%;
+    }
+}
+
+.buttonFont{
+    font-family: 'Montserrat', sans-serif;
+}
+/* .btn{
+    background-color: transparent !important;
+    color: #6e6b7b !important;
+    border: 0;
+}
+.btn:hover{
+    box-shadow: 0;
+} */

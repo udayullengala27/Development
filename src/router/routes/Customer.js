@@ -6,6 +6,7 @@ const Recommendation = lazy(() => import('@src/views/recommendation/Recommendati
 const HomePageRecommendation = lazy(() => import('@src/views/HomePageRecommendation/HomePageRecommendation'))
 const MainHome = lazy(() => import('@src/views/MainHome/MainHome'))
 const Timeline = lazy(() => import("@src/views/TimeLine/Timeline"))
+const WebsiteAnalytics = lazy(() => import("@src/views/WebsiteAnalytics/WebsiteAnalytics"))
 const Customers_Routes = [
   {
     path: '/merchant/leads',
@@ -34,6 +35,10 @@ const Customers_Routes = [
   {
     path: '/merchant/timeline',
     element: <Timeline/>
+  },
+  {
+    path: '/merchant/website-analytics',
+    element: <WebsiteAnalytics/>
   }
 ]
 

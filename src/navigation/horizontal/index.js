@@ -51,5 +51,11 @@ export default [
     title: 'Time Line',
     icon: <User size={20} />,
     navLink: '/merchant/timeline'
+  },
+  {
+    id: 'website-analytics',
+    title: 'Website Analytics',
+    icon: <User size={20} />,
+    navLink: '/merchant/website-analytics'
   }
 ]
