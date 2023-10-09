@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { Card, CardBody, Col, Row } from 'reactstrap'
 // import offers from "./data.json"
 
+import apiData from "@src/@core/auth/api/api.json"
+
 const ReferralOffers = () => {
   const navigate = useNavigate()
   const [errorMsg1, setErrorMsg1] = useState("")
@@ -41,11 +43,11 @@ const ReferralOffers = () => {
 
       form_data.append('action', "CREATE")
 
-      fetch(`https://api.xircls.com/referral/referralpoints/`, {
+      fetch(apiData.api_link, {
         method: "POST",
         headers: {
-          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2MDA3ODIyLCJpYXQiOjE2OTU5Nzc4MjIsImp0aSI6IjU1ZWVjNzI0Mzc4MDQwMWRhNzY1MDRlMjgwYzFkNGMwIiwidXNlcl9pZCI6MzA3ODE3fQ.bA0s6Bpf7BQbPQlTgCqQZyav0TGcrDp9yfk8n413w_Y",
-          "Api-key": "Fv14sMRkz8uYqd3VMbKy5U+7h6QE4Rcb7MeG1d/PoXU="
+          Authorization: apiData.auth_key,
+          "Api-key": apiData.api_key
         },
         body: form_data
       })
@@ -71,6 +73,7 @@ const ReferralOffers = () => {
     setReferrerOffer2Type('PERCENTAGE')
     setReferrerOffer2Value(0)
   }
+
   return (
     <>
       <Card>

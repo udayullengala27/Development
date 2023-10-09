@@ -5,7 +5,7 @@ import "./hero.css"
 
 const Hero = () => {
   return (
-    <div className='' style={{ minHeight: "500px" }}>
+    <div style={{ minHeight: "500px" }}>
       <Carousel className=' pt-5'>
         <Carousel.Item>
           <div className=' hero  ' style={{ paddingTop: "5%" }}>

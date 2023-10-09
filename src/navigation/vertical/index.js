@@ -1,4 +1,4 @@
-import { BookOpen, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye, AtSign, Gift, Bell, MessageSquare } from 'react-feather'
+import { BookOpen, Circle, Home, User, BarChart2, TrendingUp, Mail, Airplay, Activity, Eye, AtSign, Gift, Bell, MessageSquare } from 'react-feather'
 
 export default [
   {
@@ -93,5 +93,11 @@ export default [
     title: 'Sms Reports',
     icon: <MessageSquare size={20} />,
     navLink: '/merchant/sms-reports'
+  },
+  {
+    id: 'samples-dashboard',
+    title: 'Samples Dashboard',
+    icon: <Circle size={20} />,
+    navLink: '/merchant/samples-dashboard'
   }
 ]

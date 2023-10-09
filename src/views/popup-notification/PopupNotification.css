@@ -1,5 +1,6 @@
 .popupCard {
     width: 500px;
+    height: 800px;
     left: 50%;
     transform: translateX(-50%);
     transition: 0.5s linear;
@@ -14,7 +15,7 @@
 }
 
 .scrollDiv {
-    height: 400px;
+    height: 350px;
     overflow-y: scroll;
 }
 
@@ -45,4 +46,10 @@
 .scrollDiv ol>li::marker {
     color: aqua;
     margin-right: 10px;
+}
+
+.notifyEmail {
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: 80%;
 }

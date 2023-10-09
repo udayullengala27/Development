@@ -11,7 +11,7 @@ import { Card, Input, Row, Col } from 'reactstrap'
 
 const TableOfferLogs = (props) => {
     const { offers, handleEdit, handleDelete } = props
-    console.log("table offer logs", offers)
+    // console.log("table offer logs", offers)
     const offersLogColumns = [
         {
             name: 'Sr. No.',

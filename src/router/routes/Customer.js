@@ -6,9 +6,9 @@ import EmailKlaviyo from '@src/views/email-klaviyo/EmailKlaviyo'
 import ReferralOffers from '@src/views/Referral/ReferralOffers'
 import ReferralOffersEdit from '@src/views/Referral/ReferralOffersEdit'
 import Referrals from '@src/views/referral-dashboard/ReferralDashboard'
-const Leads = lazy(() => import('@src/views/Leads/Leads'))
 import OffersLog from '@src/views/offers-log/OffersLog'
 import PopupNotification from '@src/views/popup-notification/PopupNotification'
+const Leads = lazy(() => import('@src/views/Leads/Leads'))
 
 const Customers_Routes = [
   {
