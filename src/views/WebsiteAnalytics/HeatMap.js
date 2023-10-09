@@ -9,61 +9,122 @@ class HeatMap extends React.Component {
             options: {
                 chart: {
                     type: 'heatmap',
-                    height: 350
+                    height: 350,
+                    toolbar: {
+                        show: false // Hide the toolbar
+                    }
                 },
                 plotOptions: {
                     heatmap: {
+                        shadeIntensity: 0.5,
                         colorScale: {
                             ranges: [
                                 {
                                     from: 0,
-                                    to: 30,
+                                    to: 50,
                                     name: 'Low',
-                                    color: '#FF5722'
-                                  },
-                                  {
-                                    from: 31,
-                                    to: 60,
-                                    name: 'Medium',
-                                    color: '#FFC107'
-                                  },
-                                  {
-                                    from: 61,
-                                    to: 90,
+                                    color: '#deebfc' // Light blue
+                                },
+                                {
+                                    from: 51,
+                                    to: 100,
                                     name: 'High',
-                                    color: '#4CAF50'
-                                  }
+                                    color: '#5b9af7' // Blue
+                                }
                             ]
                         }
                     }
                 },
                 xaxis: {
                     type: 'category', // Specify the X-axis type as 'category'
-                    categories: [
-                        'Monday',
-                        'Tuesday',
-                        'Wednesday',
-                        'Thursday',
-                        'Friday',
-                        'Saturday',
-                        'Sunday'
-                    ]
+                    categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+                    labels: {
+                        show: true
+                    }
                 },
                 dataLabels: {
                     enabled: false
                 },
                 title: {
                     text: ''
+                },
+                legend: {
+                    show: false // Hide the legend
                 }
+
             },
             series: [
                 {
-                    name: 'Series 1',
-                    data: [[1, 35], [2, 85], [3, 10], [4, 70], [5, 50], [6, 80], [7, 25]]
+                    name: '',
+                    data: [
+                        { x: 'S', y: 55 },
+                        { x: 'M', y: 25 },
+                        { x: 'T', y: 55 },
+                        { x: 'W', y: 25 },
+                        { x: 'T', y: 55 },
+                        { x: 'F', y: 25 },
+                        { x: 'S', y: 55 }
+                    ]
                 },
                 {
-                    name: 'Series 2',
-                    data: [[1, 35], [2, 45], [3, 60], [4, 10], [5, 50], [6, 20], [7, 55]]
+                    name: '',
+                    data: [
+                        { x: 'S', y: 25 },
+                        { x: 'M', y: 55 },
+                        { x: 'T', y: 25 },
+                        { x: 'W', y: 55 },
+                        { x: 'T', y: 25 },
+                        { x: 'F', y: 55 },
+                        { x: 'S', y: 25 }
+                    ]
+                },
+                {
+                    name: '',
+                    data: [
+                        { x: 'S', y: 55 },
+                        { x: 'M', y: 25 },
+                        { x: 'T', y: 55 },
+                        { x: 'W', y: 25 },
+                        { x: 'T', y: 55 },
+                        { x: 'F', y: 25 },
+                        { x: 'S', y: 55 }
+                    ]
+                },
+                {
+                    name: '',
+                    data: [
+                        { x: 'S', y: 25 },
+                        { x: 'M', y: 55 },
+                        { x: 'T', y: 25 },
+                        { x: 'W', y: 55 },
+                        { x: 'T', y: 25 },
+                        { x: 'F', y: 55 },
+                        { x: 'S', y: 25 }
+                    ]
+                },
+                {
+                    name: '',
+                    data: [
+                        { x: 'S', y: 55 },
+                        { x: 'M', y: 25 },
+                        { x: 'T', y: 55 },
+                        { x: 'W', y: 25 },
+                        { x: 'T', y: 55 },
+                        { x: 'F', y: 25 },
+                        { x: 'S', y: 55 }
+                    ]
+                },
+                {
+                    name: '',
+                    data: [
+                        { x: 'S', y: 25 },
+                        { x: 'M', y: 55 },
+                        { x: 'T', y: 25 },
+                        { x: 'W', y: 55 },
+                        { x: 'T', y: 25 },
+                        { x: 'F', y: 55 },
+                        { x: 'S', y: 25 }
+                    ]
                 }
             ]
         }
@@ -71,12 +132,12 @@ class HeatMap extends React.Component {
 
     render() {
         return (
-            <div className="heatmap-chart">
+            <div className="heatmap-chart w-100 ">
                 <ReactApexChart
                     options={this.state.options}
                     series={this.state.series}
                     type="heatmap"
-                    height={350}
+                    height={300}
                 />
             </div>
         )

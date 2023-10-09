@@ -51,9 +51,6 @@ const HomePageRecommendation = () => {
                                         <span className='fw-bolder' style={{ fontSize: "16px" }}>Catalog Usage</span>
                                         <p className='fw-bolder' style={{ fontSize: "16px" }}>26.81%</p>
                                     </div>
-                                    {/* <div className="progress">
-                                        <div className="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">vwg</div>
-                                    </div> */}
                                     <div>
                                         <Progress
                                             color="success"
