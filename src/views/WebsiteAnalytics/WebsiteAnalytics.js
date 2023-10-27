@@ -1,18 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Card, CardBody, Row, Col, Badge } from 'reactstrap'
+import { Card, CardBody, Row, Col, Badge, Button } from 'reactstrap'
 import { BsClock } from 'react-icons/bs'
 import { BiUser, BiUpArrowAlt } from 'react-icons/bi'
-import { PiCirclesFourBold } from 'react-icons/pi'
 
 import HeatMap from './HeatMap'
 import ColumnChart from './ColumnChart'
 import BarChart from './BarChart'
+import Flatpickr from 'react-flatpickr'
+import 'flatpickr/dist/themes/material_blue.css'
+
 import Devices from './Device'
-import LineChart from './LineChart'
-import LineChart2 from './LineChart2'
+import { LineChart, LineChart2 } from './allLineChart'
+import apiData from "../../@core/auth/api/api.json"
 
 const WebsiteAnalytics = () => {
+
+  const [startDate, setStartDate] = useState(null)
+  const [endDate, setEndDate] = useState(null)
+
+  const handleDateChange = (selectedDates) => {
+    setStartDate(selectedDates[0])
+    setEndDate(selectedDates[1])
+  }
+
+  // const [date, setDate] = useState({ start_date: "", end_date: "" })
+  // const [startDate, setStartDate] = useState('')
+  // const [endDate, setEndDate] = useState('')
+  const [responseData, setResponseData] = useState({})
+  // const formattedStartDate = moment(setStartDate).format("YYYY-MM-DD")
+  // const formattedEndDate = moment(setEndDate).format("YYYY-MM-DD")
+
+  const handleSubmit = () => {
+    const form_data = new FormData()
+    form_data.append("shop", "maapro.myshopify.com")
+    form_data.append("app", "superleadz")
+    form_data.append("start_date", startDate.toISOString().split('T')[0])
+    form_data.append("end_date", endDate.toISOString().split('T')[0])
+
+    try {
+      fetch(apiData.api_link, {
+        method: "POST",
+        body: form_data
+      }).then(response => {
+        if (!response.ok) {
+          throw new Error("Failed")
+        }
+        return response.json()
+      }).then(data => {
+        setResponseData(data)
+      })
+    } catch (error) {
+      console.error("Error found")
+    }
+  }
+  // console.log("data:", responseData)
+
+  // ------------------date function
+  // const handleStartDateChange = (event) => {
+  //   const selectedStartDate = event.target.value
+
+  //   if (selectedStartDate) {
+  //     const startDate = new Date(selectedStartDate)
+  //     startDate.setDate(startDate.getDate() + 7) // Add 7 days to the selected date
+  //     const endDate = startDate.toISOString().split('T')[0] // Format the date as "YYYY-MM-DD"
+
+  //     setDate({ start_date: selectedStartDate, end_date: endDate })
+  //   } else {
+  //     setDate({ start_date: "", end_date: "" })
+  //   }
+  // }
+  // const updateEndDate = 
+
   return (
     <>
       <Card>
@@ -25,15 +84,35 @@ const WebsiteAnalytics = () => {
         <Col lg="9">
           <Row >
             <Col className='d-flex flex-column' lg="4">
-              <Card className='border rounded-0'>
-                <div className="title d-flex flex-column" style={{ margin: "4rem 0 0.5rem 2rem" }}>
+              <Card className='border rounded-0 h-100'>
+                <div className="title d-flex flex-column" style={{ margin: "0.5rem 0 0.5rem 2rem" }}>
                   <span style={{ fontSize: "14px", fontWeight: "900", color: "black" }}>Session by Time</span>
                   <span style={{ marginTop: "5px", fontWeight: "900", color: "#abb0cf" }}><BsClock /> 9am - 2pm</span>
                 </div>
-                {/* <HeatMap /> */}
-                <div className="linechart2 p-1" style={{ marginTop: "7rem" }}>
-                  {/* style={{ marginTop: "9rem" }} */}
-                  <LineChart2 />
+                {/* <div className="dataInput d-flex flex-column">
+                  <div className="start" style={{ padding: "5px" }}>
+                    <label htmlFor="" style={{ marginRight: "5px" }}>Start Date</label>
+                    <input type="date" className="startDate" value={date.start_date} onChange={handleStartDateChange} style={{ padding: "5px", border: "1px solid #abb0cf" }} />
+                  </div>
+                  <div className="end" style={{ padding: "5px" }}>
+                    <label htmlFor="" style={{ marginRight: "10px" }}>End Date</label>
+                    <input type="date" className="endDate" value={date.end_date} disabled style={{ padding: "5px", border: "1px solid #abb0cf" }} />
+                  </div>
+                </div>*/}
+                <div className="input d-flex justify-content-between mt-2">
+                  <Flatpickr
+                    options={{
+                      mode: 'range',
+                      dateFormat: 'Y-m-d' // You can customize the date format
+                    }}
+                    style={{ width: "70%", marginLeft: "5px" }}
+                    value={[startDate, endDate]}
+                    onChange={handleDateChange}
+                  />
+                  <button className='bg-transparent' onClick={handleSubmit} style={{ width: "25%", padding: "5px", marginRight: "5px", border: "1px solid black" }}>Show</button>
+                </div>
+                <div className="linechart2 p-1 mt-1" >
+                  <LineChart2 date={responseData} />
                 </div>
               </Card>
             </Col>
@@ -69,7 +148,7 @@ const WebsiteAnalytics = () => {
                   <BiUser size={25} color="white" style={{ background: "#6ba3f6" }} />
                   <span className='ms-1 text-light fw-bolder '>All Active user</span>
                 </div>
-                <div className="increment d-flex mt-4">
+                <div className="increment d-flex mt-2">
                   <div className="number-increment">
                     <p><h1 style={{ color: "white" }}>80</h1></p>
                   </div>
@@ -85,30 +164,7 @@ const WebsiteAnalytics = () => {
           </Row>
           <Row className='mt-3'>
             <Col lg="12" className='' style={{ padding: "0 2rem 0 2rem" }}>
-              <div className="FAQs bg-white border">
-                {/* <h4>FAQs</h4>
-                <div className="audience d-flex" style={{ marginTop: "10px" }}>
-                  <BiUser size={30} color="#4a91f7" style={{ background: "#ebf4fe" }} />
-                  <div className='title' style={{ marginLeft: "10px" }}>
-                    <span style={{ fontSize: "13px", fontWeight: "900" }}>
-                      AUDIENCE BEHAVIOR
-                    </span>
-                    <p>What are my top shots platform by audience?</p>
-                  </div>
-                </div>
-                <hr />
-                <div className="contents d-flex mt-1">
-                  <PiCirclesFourBold size={30} color="#4a91f7" style={{ background: "#ebf4fe" }} />
-                  <div className="info" style={{ marginLeft: "10px" }}>
-                    <span style={{ fontSize: "13px", fontWeight: "900" }}>CONTENT ANALYSIS</span>
-                    <p>
-                      What are my top landing pages in terms of session?
-                    </p>
-                  </div>
-                </div>
-                <div className="more d-flex justify-content-center ">
-                  <button className='border-0 fw-bolder' style={{ padding: "1rem 6rem 1rem 6rem", background: "#eef5ff", color: "#4a91f7" }}>See more</button>
-                </div> */}
+              <div className="FAQs bg-white border pt-1">
                 <HeatMap />
               </div>
             </Col>
@@ -122,3 +178,5 @@ const WebsiteAnalytics = () => {
 }
 
 export default WebsiteAnalytics
+
+//onChange={(e) => setDate({ ...date, start_date: e.target.value })}
