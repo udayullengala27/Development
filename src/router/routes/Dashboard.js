@@ -11,7 +11,7 @@ import ConsentStats from '@src/views/consent-stats/ConsentStats'
 import WizardModernVertical from '@src/views/Campaign/Campaign'
 import OffersLog from '@src/views/offers-log/OffersLog'
 import SmsReports from '@src/views/sms-reports/SmsReports'
-import SamplesDashboard from './../../views/samples-dashboard/SamplesDashboard'
+import SamplesDashboard from '@src/views/samples-dashboard/SamplesDashboard'
 
 
 const Dashboard_Routes = [
